@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "709262319743",
+    "firebase_url": "https://resident-alert-3082e.firebaseio.com",
+    "project_id": "resident-alert-3082e",
+    "storage_bucket": "resident-alert-3082e.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:709262319743:android:24f422b244c9bbc9599f4a",
+        "android_client_info": {
+          "package_name": "com.example.resident_alert"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "709262319743-33rdpa5va9dbtj7k34fnl30q7am0qp7h.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCECTYi0Cigcj7WJAP9fyo0UyPkwmJUySA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "709262319743-33rdpa5va9dbtj7k34fnl30q7am0qp7h.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
