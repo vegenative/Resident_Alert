@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:id="@+id/slide_image"
+        android:layout_width="183dp"
+        android:layout_height="183dp"
+        android:layout_marginTop="80dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/human" />
+
+    <TextView
+        android:id="@+id/slide_header"
+        android:layout_width="409dp"
+        android:layout_height="68dp"
+        android:layout_marginTop="68dp"
+        android:text="Code"
+        android:textAlignment="center"
+        android:textAllCaps="true"
+        android:textColor="@color/colorWhite"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/slide_image" />
+
+    <TextView
+        android:id="@+id/slide_description"
+        android:layout_width="313dp"
+        android:layout_height="107dp"
+        android:layout_marginTop="52dp"
+        android:autoText="false"
+        android:text="Lorem ipsum dolor sit amet tempor posuere, odio. Morbi dignissim, libero et ultrices et, accumsan ullamcorper eleifend ac, felis. Duis neque dui, porta ligula. Vivamus justo. Nulla nec mauris et nisl. Curabitur fringilla aliquet. Aliquam vel wisi."
+        android:textAlignment="center"
+        android:textAllCaps="false"
+        android:textColor="@color/colorTransparentWhite"
+        android:textIsSelectable="false"
+        android:textSize="12sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/slide_header" />
+</androidx.constraintlayout.widget.ConstraintLayout>
