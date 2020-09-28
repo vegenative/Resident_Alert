@@ -6,4 +6,151 @@
     android:layout_height="match_parent"
     tools:context=".SignUpActivity">
 
+    <ScrollView
+        android:id="@+id/scrollView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:visibility="visible">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/colorPanelLogin"
+            android:orientation="vertical">
+
+            <EditText
+                android:id="@+id/emailRegister_et"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:layout_marginBottom="32dp"
+                android:backgroundTint="@color/colorPrimaryLight"
+                android:ems="10"
+                android:hint="@string/email"
+                android:inputType="textEmailAddress"
+                android:textAlignment="center"
+                android:textColorHint="@color/colorPrimary" />
+
+            <EditText
+                android:id="@+id/passwordRegister_et"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="32dp"
+                android:backgroundTint="@color/colorPrimaryLight"
+                android:ems="10"
+                android:hint="@string/password"
+                android:inputType="textPassword"
+                android:textAlignment="center"
+                android:textColorHint="@color/colorPrimary" />
+
+            <EditText
+                android:id="@+id/cnfPassword_et"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="32dp"
+                android:backgroundTint="@color/colorPrimaryLight"
+                android:ems="10"
+                android:hint="@string/confirmPassword"
+                android:inputType="textPassword"
+                android:textAlignment="center"
+                android:textColorHint="@color/colorPrimary" />
+
+            <EditText
+                android:id="@+id/name_et"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="32dp"
+                android:backgroundTint="@color/colorPrimaryLight"
+                android:ems="10"
+                android:hint="@string/name"
+                android:inputType="textEmailAddress"
+                android:textAlignment="center"
+                android:textColorHint="@color/colorPrimary" />
+            <EditText
+                android:id="@+id/surname_et"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="32dp"
+                android:autofillHints=""
+                android:backgroundTint="@color/colorPrimaryLight"
+                android:ems="10"
+                android:hint="@string/surname"
+                android:inputType="textEmailAddress"
+                android:textAlignment="center"
+                android:textColorHint="@color/colorPrimary" />
+
+            <EditText
+                android:id="@+id/phone_et"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="32dp"
+                android:backgroundTint="@color/colorPrimaryLight"
+                android:ems="10"
+                android:hint="@string/phoneNumber"
+                android:inputType="phone"
+                android:textAlignment="center"
+                android:textColorHint="@color/colorPrimary" />
+
+            <EditText
+                android:id="@+id/street_et"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="32dp"
+                android:backgroundTint="@color/colorPrimaryLight"
+                android:ems="10"
+                android:hint="@string/adress"
+                android:inputType="textPersonName"
+                android:textAlignment="center"
+                android:textColorHint="@color/colorPrimary" />
+
+            <EditText
+                android:id="@+id/blockNumber_et"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="32dp"
+                android:backgroundTint="@color/colorPrimaryLight"
+                android:ems="10"
+                android:hint="@string/blockNumber"
+                android:inputType="textPersonName"
+                android:textAlignment="center"
+                android:textColorHint="@color/colorPrimary" />
+
+            <EditText
+                android:id="@+id/postalCode_et"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="32dp"
+                android:backgroundTint="@color/colorPrimaryLight"
+                android:ems="10"
+                android:hint="@string/postalCode"
+                android:inputType="textPersonName"
+                android:textAlignment="center"
+                android:textColorHint="@color/colorPrimary" />
+
+            <EditText
+                android:id="@+id/city_et"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="32dp"
+                android:backgroundTint="@color/colorPrimaryLight"
+                android:ems="10"
+                android:hint="@string/city"
+                android:inputType="textPersonName"
+                android:textAlignment="center"
+                android:textColorHint="@color/colorPrimary" />
+
+            <Button
+                android:id="@+id/signup_button"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                android:background="@drawable/round_btn"
+                android:text="@string/SignUp" />
+        </LinearLayout>
+    </ScrollView>
+
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,3 +1,20 @@
 <resources>
     <string name="app_name">Resident_Alert</string>
+    <string name="surname">Nazwisko</string>
+    <string name="login_btn">Zaloguj się</string>
+    <string name="email">E-mail</string>
+    <string name="password">Hasło</string>
+    <string name="confirmPassword">Potwierdź hasło</string>
+    <string name="name">Imię</string>
+    <string name="phoneNumber">Numer telefonu</string>
+    <string name="adress">Adres zamieszkania</string>
+    <string name="blockNumber">Numer domu,klatka/mieszkanie</string>
+    <string name="city">Miasto</string>
+    <string name="postalCode">Kod pocztowy</string>
+    <string name="SignUp">Zarejestruj się</string>
+    <string name="noAccount">Nie masz konta?</string>
+    <string name="signUp_tv">Zarejestruj się</string>
+    <string name="forgotPasswordtxt">"Nie pamiętasz hasła? "</string>
+    <string name="forgotPasswordTv">Zresetuj</string>
+    <string name="logut_btn">Wyloguj się</string>
 </resources>
