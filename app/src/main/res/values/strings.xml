@@ -17,4 +17,8 @@
     <string name="forgotPasswordtxt">"Nie pamiętasz hasła? "</string>
     <string name="forgotPasswordTv">Zresetuj</string>
     <string name="logut_btn">Wyloguj się</string>
+
+    <string-array name="cities_array">
+        <item>Tczew</item>
+    </string-array>
 </resources>

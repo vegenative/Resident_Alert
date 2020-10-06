@@ -32,6 +32,7 @@
                 android:ems="10"
                 android:hint="@string/email"
                 android:inputType="textEmailAddress"
+                android:imeOptions="actionNext"
                 android:textAlignment="center"
                 android:textColorHint="@color/colorPrimary" />
 
@@ -44,6 +45,7 @@
                 android:ems="10"
                 android:hint="@string/password"
                 android:inputType="textPassword"
+                android:imeOptions="actionNext"
                 android:textAlignment="center"
                 android:textColorHint="@color/colorPrimary" />
 
@@ -56,6 +58,7 @@
                 android:ems="10"
                 android:hint="@string/confirmPassword"
                 android:inputType="textPassword"
+                android:imeOptions="actionNext"
                 android:textAlignment="center"
                 android:textColorHint="@color/colorPrimary" />
 
@@ -67,7 +70,8 @@
                 android:backgroundTint="@color/colorPrimaryLight"
                 android:ems="10"
                 android:hint="@string/name"
-                android:inputType="textEmailAddress"
+                android:inputType="textCapSentences|textAutoCorrect"
+                android:imeOptions="actionNext"
                 android:textAlignment="center"
                 android:textColorHint="@color/colorPrimary" />
             <EditText
@@ -79,7 +83,8 @@
                 android:backgroundTint="@color/colorPrimaryLight"
                 android:ems="10"
                 android:hint="@string/surname"
-                android:inputType="textEmailAddress"
+                android:inputType="textCapSentences|textAutoCorrect"
+                android:imeOptions="actionNext"
                 android:textAlignment="center"
                 android:textColorHint="@color/colorPrimary" />
 
@@ -92,6 +97,7 @@
                 android:ems="10"
                 android:hint="@string/phoneNumber"
                 android:inputType="phone"
+                android:imeOptions="actionNext"
                 android:textAlignment="center"
                 android:textColorHint="@color/colorPrimary" />
 
@@ -103,7 +109,8 @@
                 android:backgroundTint="@color/colorPrimaryLight"
                 android:ems="10"
                 android:hint="@string/adress"
-                android:inputType="textPersonName"
+                android:inputType="textCapSentences|textAutoCorrect"
+                android:imeOptions="actionNext"
                 android:textAlignment="center"
                 android:textColorHint="@color/colorPrimary" />
 
@@ -116,6 +123,7 @@
                 android:ems="10"
                 android:hint="@string/blockNumber"
                 android:inputType="textPersonName"
+                android:imeOptions="actionNext"
                 android:textAlignment="center"
                 android:textColorHint="@color/colorPrimary" />
 
@@ -128,6 +136,7 @@
                 android:ems="10"
                 android:hint="@string/postalCode"
                 android:inputType="textPersonName"
+                android:imeOptions="actionNext"
                 android:textAlignment="center"
                 android:textColorHint="@color/colorPrimary" />
 
@@ -139,7 +148,8 @@
                 android:backgroundTint="@color/colorPrimaryLight"
                 android:ems="10"
                 android:hint="@string/city"
-                android:inputType="textPersonName"
+                android:inputType="textCapSentences|textAutoCorrect"
+                android:imeOptions="actionDone"
                 android:textAlignment="center"
                 android:textColorHint="@color/colorPrimary" />
 
