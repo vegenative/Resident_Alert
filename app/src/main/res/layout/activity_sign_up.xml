@@ -8,8 +8,8 @@
 
     <ScrollView
         android:id="@+id/scrollView"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -18,148 +18,173 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@color/colorPanelLogin"
-            android:orientation="vertical">
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:layout_marginBottom="32dp">
 
-            <EditText
-                android:id="@+id/emailRegister_et"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
-                android:layout_marginBottom="32dp"
-                android:backgroundTint="@color/colorPrimaryLight"
-                android:ems="10"
-                android:hint="@string/email"
-                android:inputType="textEmailAddress"
-                android:imeOptions="actionNext"
-                android:textAlignment="center"
-                android:textColorHint="@color/colorPrimary" />
-
-            <EditText
-                android:id="@+id/passwordRegister_et"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="32dp"
-                android:backgroundTint="@color/colorPrimaryLight"
-                android:ems="10"
-                android:hint="@string/password"
-                android:inputType="textPassword"
-                android:imeOptions="actionNext"
-                android:textAlignment="center"
-                android:textColorHint="@color/colorPrimary" />
-
-            <EditText
-                android:id="@+id/cnfPassword_et"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="32dp"
-                android:backgroundTint="@color/colorPrimaryLight"
-                android:ems="10"
-                android:hint="@string/confirmPassword"
-                android:inputType="textPassword"
-                android:imeOptions="actionNext"
-                android:textAlignment="center"
-                android:textColorHint="@color/colorPrimary" />
 
             <EditText
                 android:id="@+id/name_et"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="16dp"
                 android:layout_marginBottom="32dp"
-                android:backgroundTint="@color/colorPrimaryLight"
+                android:background="@drawable/round_et"
                 android:ems="10"
                 android:hint="@string/name"
-                android:inputType="textCapSentences|textAutoCorrect"
                 android:imeOptions="actionNext"
+                android:inputType="textCapSentences|textAutoCorrect"
+                android:padding="6dp"
                 android:textAlignment="center"
-                android:textColorHint="@color/colorPrimary" />
+                android:textColorHint="@color/colorGray"
+                android:textSize="@dimen/login_textSize" />
+
             <EditText
                 android:id="@+id/surname_et"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_gravity="center"
                 android:layout_marginBottom="32dp"
-                android:autofillHints=""
-                android:backgroundTint="@color/colorPrimaryLight"
+                android:background="@drawable/round_et"
                 android:ems="10"
                 android:hint="@string/surname"
+                android:imeOptions="actionNext"
                 android:inputType="textCapSentences|textAutoCorrect"
-                android:imeOptions="actionNext"
+                android:padding="6dp"
                 android:textAlignment="center"
-                android:textColorHint="@color/colorPrimary" />
+                android:textColorHint="@color/colorGray" />
 
-            <EditText
-                android:id="@+id/phone_et"
+            <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 android:layout_marginBottom="32dp"
-                android:backgroundTint="@color/colorPrimaryLight"
-                android:ems="10"
-                android:hint="@string/phoneNumber"
-                android:inputType="phone"
-                android:imeOptions="actionNext"
-                android:textAlignment="center"
-                android:textColorHint="@color/colorPrimary" />
+                android:orientation="horizontal">
+
+                <com.hbb20.CountryCodePicker
+                    android:id="@+id/countryCodePicker"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:ccp_autoDetectCountry="true"
+                    app:ccp_showFlag="true"
+                    app:ccp_showNameCode="true"></com.hbb20.CountryCodePicker>
+
+                <EditText
+                    android:id="@+id/phone_et"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:background="@drawable/round_et"
+                    android:ems="10"
+                    android:hint="@string/phoneNumber"
+                    android:imeOptions="actionNext"
+                    android:inputType="phone"
+                    android:padding="6dp"
+                    android:textAlignment="center"
+                    android:textColorHint="@color/colorGray" />
+            </LinearLayout>
 
             <EditText
                 android:id="@+id/street_et"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_gravity="center"
                 android:layout_marginBottom="32dp"
-                android:backgroundTint="@color/colorPrimaryLight"
+                android:background="@drawable/round_et"
                 android:ems="10"
                 android:hint="@string/adress"
+                android:imeOptions="actionNext"
                 android:inputType="textCapSentences|textAutoCorrect"
-                android:imeOptions="actionNext"
+                android:padding="6dp"
                 android:textAlignment="center"
-                android:textColorHint="@color/colorPrimary" />
-
-            <EditText
-                android:id="@+id/blockNumber_et"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="32dp"
-                android:backgroundTint="@color/colorPrimaryLight"
-                android:ems="10"
-                android:hint="@string/blockNumber"
-                android:inputType="textPersonName"
-                android:imeOptions="actionNext"
-                android:textAlignment="center"
-                android:textColorHint="@color/colorPrimary" />
+                android:textColorHint="@color/colorGray" />
 
             <EditText
                 android:id="@+id/postalCode_et"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_gravity="center"
                 android:layout_marginBottom="32dp"
-                android:backgroundTint="@color/colorPrimaryLight"
+                android:background="@drawable/round_et"
                 android:ems="10"
                 android:hint="@string/postalCode"
-                android:inputType="textPersonName"
                 android:imeOptions="actionNext"
+                android:inputType="textPostalAddress"
+                android:padding="6dp"
                 android:textAlignment="center"
-                android:textColorHint="@color/colorPrimary" />
+                android:textColorHint="@color/colorGray" />
 
             <EditText
                 android:id="@+id/city_et"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_gravity="center"
                 android:layout_marginBottom="32dp"
-                android:backgroundTint="@color/colorPrimaryLight"
+                android:background="@drawable/round_et"
                 android:ems="10"
                 android:hint="@string/city"
-                android:inputType="textCapSentences|textAutoCorrect"
                 android:imeOptions="actionDone"
+                android:inputType="textCapSentences|textAutoCorrect"
+                android:padding="6dp"
                 android:textAlignment="center"
-                android:textColorHint="@color/colorPrimary" />
+                android:textColorHint="@color/colorGray" />
+
+            <EditText
+                android:id="@+id/blockNumber_et"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/round_et"
+                android:ems="10"
+                android:hint="@string/blockNumber"
+                android:imeOptions="actionNext"
+                android:layout_marginBottom="32dp"
+                android:inputType="number"
+                android:padding="6dp"
+                android:textAlignment="center"
+                android:textColorHint="@color/colorGray" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginBottom="32dp"
+                android:orientation="horizontal">
+
+                <EditText
+                    android:id="@+id/flatLetter_et"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/round_et"
+                    android:ems="10"
+                    android:hint="@string/blockLetter"
+                    android:imeOptions="actionNext"
+                    android:inputType="textCapCharacters"
+                    android:padding="6dp"
+                    android:textAlignment="center"
+                    android:textColorHint="@color/colorGray" />
+
+                <EditText
+                    android:id="@+id/blockOfFlatNumber_et"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/round_et"
+                    android:ems="10"
+                    android:hint="@string/blockOfFlatNumber"
+                    android:imeOptions="actionDone"
+                    android:inputType="number"
+                    android:padding="6dp"
+                    android:textAlignment="center"
+                    android:textColorHint="@color/colorGray" />
+            </LinearLayout>
 
             <Button
                 android:id="@+id/signup_button"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_width="240dp"
+                android:layout_height="32dp"
+                android:layout_gravity="center"
                 android:layout_marginBottom="16dp"
-                android:background="@drawable/round_btn"
-                android:text="@string/SignUp" />
+                android:background="@drawable/login_btn"
+                android:text="@string/SignUp"
+                android:textColor="@color/colorWhite"/>
         </LinearLayout>
     </ScrollView>
 

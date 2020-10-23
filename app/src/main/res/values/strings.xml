@@ -3,12 +3,14 @@
     <string name="surname">Nazwisko</string>
     <string name="login_btn">Zaloguj się</string>
     <string name="email">E-mail</string>
+    <string name="enterEmail">Podaj e-mail</string>
     <string name="password">Hasło</string>
+    <string name="enterPassword">Podaj hasło</string>
     <string name="confirmPassword">Potwierdź hasło</string>
     <string name="name">Imię</string>
     <string name="phoneNumber">Numer telefonu</string>
     <string name="adress">Adres zamieszkania</string>
-    <string name="blockNumber">Numer domu,klatka/mieszkanie</string>
+    <string name="blockNumber">Nr domu/bloku</string>
     <string name="city">Miasto</string>
     <string name="postalCode">Kod pocztowy</string>
     <string name="SignUp">Zarejestruj się</string>
@@ -17,6 +19,13 @@
     <string name="forgotPasswordtxt">"Nie pamiętasz hasła? "</string>
     <string name="forgotPasswordTv">Zresetuj</string>
     <string name="logut_btn">Wyloguj się</string>
+    <string name="goSignIn">Przejdź dalej</string>
+    <string name="alreadyHaveAccount">"Masz już konto? "</string>
+    <string name="blockLetter">Litera bloku</string>
+    <string name="blockOfFlatNumber">Nr mieszkania</string>
+    <string name="check">Sprawdź</string>
+    <string name="smsInfo">Sms weryfikujący został wysłany na podany numer telefonu</string>
+    <string name="back">wróć</string>
 
     <string-array name="cities_array">
         <item>Tczew</item>

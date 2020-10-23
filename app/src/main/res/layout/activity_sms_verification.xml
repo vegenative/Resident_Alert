@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".SmsVerification">
+    <LinearLayout
+        android:id="@+id/lign_ll"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:visibility="visible">
+
+
+        <ImageView
+            android:id="@+id/imageView2"
+            android:layout_width="390dp"
+            android:layout_height="312dp"
+            app:srcCompat="@drawable/logo_miasto" />
+
+        <TextView
+            android:id="@+id/smsInfo"
+            android:layout_width="250dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="16dp"
+            android:fontFamily="@font/staatliches_font"
+            android:text="@string/smsInfo"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            android:textSize="@dimen/login_textSize" />
+
+        <com.chaos.view.PinView
+            android:id="@+id/pinView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:itemCount="6"
+            app:itemWidth="60dp"
+            app:itemHeight="60dp"
+            app:itemRadius="20dp"
+            app:lineColor="@color/colorAccent"
+            app:lineWidth="4dp"
+            app:itemSpacing="1dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="16dp"
+            style="@style/PinWidget.PinView"
+            android:cursorVisible="true"
+            app:cursorColor="@color/black"
+            android:inputType="number"
+            android:onClick="goToMenu">
+
+        </com.chaos.view.PinView>
+
+        <Button
+            android:id="@+id/verifyCode_btn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="16dp"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/login_btn"
+            android:fontFamily="sans-serif"
+            android:text="@string/check"
+            android:textColor="@color/colorWhite" />
+
+        <Button
+            android:id="@+id/back_btn"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:text="@string/back"
+            android:onClick="goToSignUp"
+            android:layout_gravity="center"
+            android:layout_marginHorizontal="16dp"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/login_btn"
+            android:fontFamily="sans-serif"
+            android:textColor="@color/colorWhite"/>
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

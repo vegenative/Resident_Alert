@@ -2,19 +2,20 @@ package com.example.resident_alert;
 
 public class UserHelperClass {
 
-    private String email, password, name, surname, telephone, city, postalCode, street, blockNumber;
+    private String email, password, name, surname, telephone, city, street, block, flatLetter, flat;
 
     public UserHelperClass(String email, String password,String name,String surname, String telephone,
-                           String street, String blockNumber, String postalCode,String city) {
+                           String street, String block,String city,String flatLetter,String flat) {
         this.email = email;
         this.password = password;
         this.name = name;
         this.surname = surname;
         this.telephone = telephone;
         this.city = city;
-        this.postalCode = postalCode;
         this.street = street;
-        this.blockNumber = blockNumber;
+        this.block = block;
+        this.flatLetter = flatLetter;
+        this.flat = flat;
     }
 
     public UserHelperClass() {
@@ -69,14 +70,6 @@ public class UserHelperClass {
         this.city = city;
     }
 
-    public String getPostalCode() {
-        return postalCode;
-    }
-
-    public void setPostalCode(String postalCode) {
-        this.postalCode = postalCode;
-    }
-
     public String getStreet() {
         return street;
     }
@@ -85,11 +78,25 @@ public class UserHelperClass {
         this.street = street;
     }
 
-    public String getBlockNumber() {
-        return blockNumber;
+    public String getBlock() {
+        return block;
     }
 
-    public void setBlockNumber(String blockNumber) {
-        this.blockNumber = blockNumber;
+    public void setBlock(String block) {
+        this.block = block;
+    }
+    public String getFlatLetter() {
+        return flatLetter;
+    }
+
+    public void setFlatLetter(String flatLetter) {
+        this.flatLetter = flatLetter;
+    }
+    public String getFlat() {
+        return flat;
+    }
+
+    public void setFlat(String flat) {
+        this.flat = flat;
     }
 }

@@ -87,7 +87,7 @@ public class LoginActivity extends AppCompatActivity {
         signUp_tv.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(LoginActivity.this, SignUpActivity.class);
+                Intent intent = new Intent(LoginActivity.this, SignInActivity.class);
                 startActivity(intent);
             }
         });
@@ -107,7 +107,6 @@ public class LoginActivity extends AppCompatActivity {
     @Override
     protected void onStart() {
         super.onStart();
-        forgotPassword_ll.setVisibility(View.GONE);
 
         //if user is already login
         FirebaseUser currentUser = fAuth.getCurrentUser();

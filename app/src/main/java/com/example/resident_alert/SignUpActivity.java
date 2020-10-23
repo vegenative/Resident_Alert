@@ -19,6 +19,7 @@ import com.google.firebase.auth.PhoneAuthCredential;
 import com.google.firebase.auth.PhoneAuthProvider;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.hbb20.CountryCodePicker;
 
 
 import java.util.concurrent.TimeUnit;
@@ -26,12 +27,10 @@ import java.util.concurrent.TimeUnit;
 public class SignUpActivity extends AppCompatActivity {
 
     private Button signUpBtn;
-    private EditText email_et, password_et,name_et,surname_et,cnfPassword_et,tel_et,street_et,blockNumber_et,city_et,postalCode_et;
-    private String userID,verificationCodeBySystem;
-    private boolean isSmsVerified = false;
-    private FirebaseAuth fAuth;
-    private FirebaseDatabase rootNode;
-    private DatabaseReference reference;
+    public EditText name_et,surname_et,tel_et,street_et,block_et,city_et,postalCode_et,flat_et,flatLetter_et;
+
+    private CountryCodePicker countryCodePicker;
+
 
 
 
@@ -43,19 +42,22 @@ public class SignUpActivity extends AppCompatActivity {
         //button
         signUpBtn = (Button) findViewById(R.id.signup_button);
         //edit text
-        email_et = (EditText) findViewById(R.id.emailRegister_et);
-        password_et = (EditText) findViewById(R.id.passwordRegister_et);
+        //email_et = (EditText) findViewById(R.id.emailRegister_et);
+        //password_et = (EditText) findViewById(R.id.passwordRegister_et);
         name_et = (EditText) findViewById(R.id.name_et);
         surname_et = (EditText) findViewById(R.id.surname_et);
-        cnfPassword_et = (EditText) findViewById(R.id.cnfPassword_et);
         tel_et = (EditText) findViewById(R.id.phone_et);
         street_et = (EditText) findViewById(R.id.street_et);
-        blockNumber_et = (EditText) findViewById(R.id.blockNumber_et);
+        block_et = (EditText) findViewById(R.id.blockNumber_et);
         city_et = (EditText) findViewById(R.id.city_et);
         postalCode_et = (EditText) findViewById(R.id.postalCode_et);
+        flat_et = (EditText) findViewById(R.id.blockOfFlatNumber_et);
+        flatLetter_et = (EditText) findViewById(R.id.flatLetter_et);
+
+        countryCodePicker = findViewById(R.id.countryCodePicker);
 
 
-        fAuth = FirebaseAuth.getInstance();
+
 
 
 
@@ -65,29 +67,27 @@ public class SignUpActivity extends AppCompatActivity {
 ///////////////////////////////////////OnClick/////////////////////////////////////////////////////
 
         signUpBtn.setOnClickListener((v)->{
-            String email = email_et.getText().toString().trim();
-            String password = password_et.getText().toString().trim();
-            String cnfPassword = cnfPassword_et.getText().toString().trim();
+            //String email = email_et.getText().toString().trim();
+            //String password = password_et.getText().toString().trim();
+            //String cnfPassword = cnfPassword_et.getText().toString().trim();
             String name = name_et.getText().toString().trim();
             String surname = surname_et.getText().toString().trim();
+
             String stringTel = tel_et.getText().toString().trim();
+            String phone = "+" + countryCodePicker.getFullNumber() + stringTel;
+
             String street = street_et.getText().toString();
-            String blockNumber = blockNumber_et.getText().toString().trim();
+            String blockNumber = block_et.getText().toString().trim();
+            String flatLetter = flatLetter_et.getText().toString().trim();
+            String blockOfFlatNumber = flat_et.getText().toString().trim();
             String city = city_et.getText().toString().trim();
             String postalCode = postalCode_et.getText().toString().trim();
 
 
 
 
-            if (TextUtils.isEmpty(email)){
-                email_et.setError("Pole nie może być puste");
-                email_et.requestFocus();
-            }
-            else if (!Patterns.EMAIL_ADDRESS.matcher(email).matches()){
-                email_et.setError("Pole musi być adresem E-mail");
-                email_et.requestFocus();
-            }
-            else if (TextUtils.isEmpty(name)){
+
+            if (TextUtils.isEmpty(name)){
                 name_et.setError("Pole nie może być puste");
                 name_et.requestFocus();
             }
@@ -107,10 +107,6 @@ public class SignUpActivity extends AppCompatActivity {
                 street_et.setError("Pole nie może być puste");
                 street_et.requestFocus();
             }
-            else if (TextUtils.isEmpty(blockNumber)){
-                blockNumber_et.setError("Pole nie może być puste");
-                blockNumber_et.requestFocus();
-            }
             else if (TextUtils.isEmpty(postalCode)){
                 postalCode_et.setError("Pole nie może być puste");
                 postalCode_et.requestFocus();
@@ -119,40 +115,31 @@ public class SignUpActivity extends AppCompatActivity {
                 city_et.setError("Pole nie może być puste");
                 city_et.requestFocus();
             }
-            else if(cnfPassword.equals(password)){
-                signUp(email,password,name,surname,stringTel,street,blockNumber,postalCode,city);
+            else if (TextUtils.isEmpty(blockNumber)){
+                block_et.setError("Pole nie może być puste");
+                block_et.requestFocus();
             }
-            else{
-                cnfPassword_et.setError("Hasła muszą być takie same");
+            else if (TextUtils.isEmpty(flatLetter)){
+                city_et.setError("Pole nie może być puste");
+                city_et.requestFocus();
+            }
+            else if (TextUtils.isEmpty(blockOfFlatNumber)){
+                city_et.setError("Pole nie może być puste");
+                city_et.requestFocus();
+            }
+
+            else {
+                passValuesToActivity(name,surname,phone,street,city,blockNumber,flatLetter,blockOfFlatNumber,stringTel);
+
             }
         });
     }
 
     ///////////////////////////////////////Methods//////////////////////////////////////////////////
 
-    //signUp
-    private void signUp(String email, String password,String name,String surname, String stringTel,
-                        String street, String blockNumber, String postalCode,String city) {
-        fAuth.createUserWithEmailAndPassword(email,password)
-                .addOnCompleteListener(task -> {
-            if(task.isSuccessful()){
 
-                StoreUserData(email,password,name,surname,stringTel,street,blockNumber,postalCode,city);
-                SignUpActivity.this.sendVerificationEmail();
-                sendPhoneVerification(stringTel);
-
-                Toast.makeText(SignUpActivity.this, "Witaj " + name ,Toast.LENGTH_SHORT).show();
-                startActivity(new Intent(getApplicationContext(), MenuActivity.class));
-                finish();
-
-            }else {
-                Toast.makeText(SignUpActivity.this,"Error ! "
-                        + task.getException().getMessage(),Toast.LENGTH_SHORT).show();
-            }
-        });
-    }
     //verification email
-    private void sendVerificationEmail(){
+    /*private void sendVerificationEmail(){
         FirebaseUser user = fAuth.getCurrentUser();
         user.sendEmailVerification()
                 .addOnSuccessListener(aVoid ->
@@ -160,67 +147,27 @@ public class SignUpActivity extends AppCompatActivity {
                 .addOnFailureListener(e ->
                         Toast.makeText(SignUpActivity.this, "error" + e.getMessage(), Toast.LENGTH_SHORT).show());
     }
-    //veryfication phone
-    private void sendPhoneVerification(String stringTel){
-        PhoneAuthProvider.getInstance().verifyPhoneNumber(
-                "+48" + stringTel,
-                60,
-                TimeUnit.SECONDS,
-                TaskExecutors.MAIN_THREAD,
-                fCallbacks);
+    */
+
+    private void passValuesToActivity(String name,String surname,String phone,String street,String city, String block,String flatLetter,String flat,String stringTel){
+        //pass all fields to the next activity
+        Intent goNext = new Intent(this,SmsVerification.class);
+
+        goNext.putExtra("name",name);
+        goNext.putExtra("surname",surname);
+        goNext.putExtra("phone",phone);
+        goNext.putExtra("street",street);
+        goNext.putExtra("city",city);
+        goNext.putExtra("block",block);
+        goNext.putExtra("flatLetter",flatLetter);
+        goNext.putExtra("flat",flat);
+        goNext.putExtra("stringTel", stringTel);
+
+        Toast.makeText(SignUpActivity.this, "Witaj " + name ,Toast.LENGTH_SHORT).show();
+
+        startActivity(goNext);
+
+
     }
 
-    private PhoneAuthProvider.OnVerificationStateChangedCallbacks fCallbacks = new PhoneAuthProvider.OnVerificationStateChangedCallbacks() {
-        @Override
-        public void onCodeSent(@NonNull String s, @NonNull PhoneAuthProvider.ForceResendingToken forceResendingToken) {
-            super.onCodeSent(s, forceResendingToken);
-
-            verificationCodeBySystem = s;
-
-        }
-
-        @Override
-        public void onVerificationCompleted(@NonNull PhoneAuthCredential phoneAuthCredential) {
-            String smsCode = phoneAuthCredential.getSmsCode();
-            if(smsCode != null){
-                verifyCode(smsCode);
-            }
-        }
-
-        @Override
-        public void onVerificationFailed(@NonNull FirebaseException e) {
-            Toast.makeText(SignUpActivity.this,e.getMessage(),Toast.LENGTH_SHORT).show();
-        }
-    };
-
-    private void verifyCode(String codeByUser){
-        PhoneAuthCredential credential = PhoneAuthProvider.getCredential(verificationCodeBySystem,codeByUser);
-        signInUserByCredentials(credential);
-    }
-
-    private void signInUserByCredentials(PhoneAuthCredential credential) {
-        fAuth.signInWithCredential(credential)
-                .addOnCompleteListener(SignUpActivity.this, task -> {
-
-                    if(task.isSuccessful()){
-
-                    }
-                    else{
-                        Toast.makeText(SignUpActivity.this, "error" + task.getException().getMessage(), Toast.LENGTH_SHORT).show();
-                    }
-                });
-    }
-
-    //Firebase store data
-    private void StoreUserData(String email,String password,String name,String surname,
-                      String stringTel,String city,String postalCode,String street,String blockNumber){
-        rootNode = FirebaseDatabase.getInstance();
-        reference = rootNode.getReference("users");
-
-        UserHelperClass helperClass =
-                new UserHelperClass(email,password,name,surname,stringTel,city,postalCode,street,blockNumber);
-
-
-        reference.child(stringTel).setValue(helperClass);
-    }
 }
