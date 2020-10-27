@@ -55,33 +55,57 @@
                 android:textAlignment="center"
                 android:textColorHint="@color/colorGray" />
 
+            <EditText
+                android:id="@+id/email_et"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginBottom="32dp"
+                android:padding="6dp"
+                android:background="@drawable/round_et"
+                android:ems="10"
+                android:hint="@string/enterEmail"
+                android:imeOptions="actionNext"
+                android:inputType="textPersonName"
+                android:textAllCaps="false"
+                android:textColorHint="@color/colorGray"
+                android:textAlignment="center"
+                android:textSize="@dimen/login_textSize" />
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_marginBottom="32dp"
                 android:orientation="horizontal">
 
-                <com.hbb20.CountryCodePicker
-                    android:id="@+id/countryCodePicker"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    app:ccp_autoDetectCountry="true"
-                    app:ccp_showFlag="true"
-                    app:ccp_showNameCode="true"></com.hbb20.CountryCodePicker>
-
                 <EditText
-                    android:id="@+id/phone_et"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:id="@+id/postalCode_et"
+                    android:layout_width="wrap_content"
+                    android:layout_height="40dp"
                     android:layout_gravity="center"
                     android:background="@drawable/round_et"
                     android:ems="10"
-                    android:hint="@string/phoneNumber"
+                    android:hint="@string/postalCode"
                     android:imeOptions="actionNext"
-                    android:inputType="phone"
+                    android:inputType="textPostalAddress"
                     android:padding="6dp"
                     android:textAlignment="center"
                     android:textColorHint="@color/colorGray" />
+
+                <Spinner
+                    android:id="@+id/city_et"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_gravity="center"
+                    android:background="@drawable/round_et"
+                    android:ems="10"
+                    android:hint="@string/city"
+                    android:imeOptions="actionDone"
+                    android:inputType="textCapSentences|textAutoCorrect"
+                    android:padding="6dp"
+                    android:prompt="@string/city"
+                    android:spinnerMode="dialog"
+                    android:textAlignment="center" />
             </LinearLayout>
 
             <EditText
@@ -99,49 +123,60 @@
                 android:textAlignment="center"
                 android:textColorHint="@color/colorGray" />
 
-            <EditText
-                android:id="@+id/postalCode_et"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_marginBottom="32dp"
-                android:background="@drawable/round_et"
-                android:ems="10"
-                android:hint="@string/postalCode"
-                android:imeOptions="actionNext"
-                android:inputType="textPostalAddress"
-                android:padding="6dp"
-                android:textAlignment="center"
-                android:textColorHint="@color/colorGray" />
 
-            <EditText
-                android:id="@+id/city_et"
+            <RadioGroup
+                android:id="@+id/radioGroup"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_marginBottom="32dp"
-                android:background="@drawable/round_et"
-                android:ems="10"
-                android:hint="@string/city"
-                android:imeOptions="actionDone"
-                android:inputType="textCapSentences|textAutoCorrect"
-                android:padding="6dp"
-                android:textAlignment="center"
-                android:textColorHint="@color/colorGray" />
+                android:layout_height="match_parent"
+                android:layout_marginBottom="16dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/textView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="3"
+                    android:textAlignment="center"
+                    android:textSize="@dimen/login_textSize"
+                    android:fontFamily="@font/staatliches_font"
+                    android:text="Wybierz:" />
+
+
+
+                <RadioButton
+                    android:id="@+id/flat_Rbtn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="3"
+                    android:text="Mieszkanie"
+                    android:onClick="checkButton"
+                    android:checked="true"/>
+
+                <RadioButton
+                    android:id="@+id/house_Rbtn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="3"
+                    android:text="Dom"
+                    android:onClick="checkButton"
+                    />
+            </RadioGroup>
+
 
             <EditText
                 android:id="@+id/blockNumber_et"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
                 android:background="@drawable/round_et"
                 android:ems="10"
                 android:hint="@string/blockNumber"
                 android:imeOptions="actionNext"
-                android:layout_marginBottom="32dp"
                 android:inputType="number"
                 android:padding="6dp"
                 android:textAlignment="center"
-                android:textColorHint="@color/colorGray" />
+                android:textColorHint="@color/colorGray"
+                tools:visibility="visible" />
 
             <LinearLayout
                 android:layout_width="wrap_content"
@@ -160,7 +195,8 @@
                     android:inputType="textCapCharacters"
                     android:padding="6dp"
                     android:textAlignment="center"
-                    android:textColorHint="@color/colorGray" />
+                    android:textColorHint="@color/colorGray"
+                    tools:visibility="visible" />
 
                 <EditText
                     android:id="@+id/blockOfFlatNumber_et"
@@ -173,7 +209,8 @@
                     android:inputType="number"
                     android:padding="6dp"
                     android:textAlignment="center"
-                    android:textColorHint="@color/colorGray" />
+                    android:textColorHint="@color/colorGray"
+                    tools:visibility="visible" />
             </LinearLayout>
 
             <Button

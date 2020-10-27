@@ -2,6 +2,7 @@
 <resources>
     <color name="colorAccent">#236B82</color>
     <color name="colorWhite">#FFFFFF</color>
+    <color name="colorWhiteLight">#fff</color>
     <color name="black">#000000</color>
     <color name="colorTransparentWhite">#CCCCCC</color>
     <color name="colorNeonGreen">#80FFEB</color>

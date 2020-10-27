@@ -6,7 +6,6 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -45,12 +44,12 @@ public class SmsVerification extends AppCompatActivity {
 
 
 
-        sendPhoneVerification(phone);
+        sendPhoneVerification();
 
     }
 
     //verification phone
-    private void sendPhoneVerification(String stringTel){
+    private void sendPhoneVerification(){
 
         //get data from previous activity
         email = getIntent().getStringExtra("email");
@@ -140,9 +139,8 @@ public class SmsVerification extends AppCompatActivity {
         rootNode = FirebaseDatabase.getInstance();
         reference = rootNode.getReference("Users");
 
-        //nie zapisuje email i password z SignInActivity
         UserHelperClass addNewUser =
-                new UserHelperClass(email,password,name,surname,phone,city,street,block,flatLetter,flat);
+                new UserHelperClass(email,password,name,surname,phone,street,block,city,flatLetter,flat);
 
 
         reference.child(phone).setValue(addNewUser);

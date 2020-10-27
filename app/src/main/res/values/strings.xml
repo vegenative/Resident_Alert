@@ -21,11 +21,14 @@
     <string name="logut_btn">Wyloguj się</string>
     <string name="goSignIn">Przejdź dalej</string>
     <string name="alreadyHaveAccount">"Masz już konto? "</string>
-    <string name="blockLetter">Litera bloku</string>
+    <string name="blockLetter">Klatka</string>
     <string name="blockOfFlatNumber">Nr mieszkania</string>
     <string name="check">Sprawdź</string>
     <string name="smsInfo">Sms weryfikujący został wysłany na podany numer telefonu</string>
     <string name="back">wróć</string>
+    <string name="phone">Numer Telefonu</string>
+    <string name="phoneNumberEnter">Podaj numer telefonu</string>
+    <string name="choose">Wybierz:</string>
 
     <string-array name="cities_array">
         <item>Tczew</item>
