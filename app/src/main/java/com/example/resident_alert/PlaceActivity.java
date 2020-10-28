@@ -50,11 +50,11 @@ public class PlaceActivity extends AppCompatActivity implements View.OnClickList
     public void onClick(View v) {
         switch (v.getId()){
             case R.id.bathroomButton:
-                place = "Bathroom";
+                place = "Łazienka";
                 transition(place);
                 break;
             case R.id.kitchenButton:
-                place = "Kitchen";
+                place = "Kuchnia";
                 transition(place);
                 break;
             case R.id.salonButton:
@@ -62,23 +62,23 @@ public class PlaceActivity extends AppCompatActivity implements View.OnClickList
                 transition(place);
                 break;
             case R.id.corridorButton:
-                place = "Corridor";
+                place = "Korytarz";
                 transition(place);
                 break;
             case R.id.cellarButton:
-                place = "Cellar";
+                place = "Piwnica";
                 transition(place);
                 break;
             case R.id.staircaseButton:
-                place = "Staircase";
+                place = "Klatka Schodowa";
                 transition(place);
                 break;
             case R.id.gardenButton:
-                place = "Garden";
+                place = "Ogród";
                 transition(place);
                 break;
             case R.id.garageButton:
-                place = "Garage";
+                place = "Garaż";
                 transition(place);
                 break;
 

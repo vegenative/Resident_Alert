@@ -25,14 +25,14 @@
                     android:layout_width="200dp"
                     android:layout_height="168dp"
                     android:text="Łazienka"
-                    android:background="@drawable/custom_button"
+                    android:background="@drawable/sketch_button"
                     android:textColor="#FFF"/>
 
                 <Button
                     android:id="@+id/kitchenButton"
                     android:layout_width="131dp"
                     android:layout_height="match_parent"
-                    android:background="@drawable/custom_button"
+                    android:background="@drawable/sketch_button"
                     android:text="Kuchnia"
                     android:textColor="#FFF" />
             </TableRow>
@@ -46,14 +46,14 @@
                     android:layout_width="210dp"
                     android:layout_height="168dp"
                     android:text="Pokój dzienny"
-                    android:background="@drawable/custom_button"
+                    android:background="@drawable/sketch_button"
                     android:textColor="#FFF"/>
 
                 <Button
                     android:id="@+id/corridorButton"
                     android:layout_width="200dp"
                     android:layout_height="168dp"
-                    android:background="@drawable/custom_button"
+                    android:background="@drawable/sketch_button"
                     android:text="Korytarz"
                     android:textColor="#FFF" />
 
@@ -68,7 +68,7 @@
                     android:layout_width="210dp"
                     android:layout_height="168dp"
                     android:text="Piwnica"
-                    android:background="@drawable/custom_button"
+                    android:background="@drawable/sketch_button"
                     android:textColor="#FFF"/>
 
                 <Button
@@ -76,7 +76,7 @@
                     android:layout_width="200dp"
                     android:layout_height="168dp"
                     android:text="Klatka schodowa"
-                    android:background="@drawable/custom_button"
+                    android:background="@drawable/sketch_button"
                     android:textColor="#FFF"/>
             </TableRow>
 
@@ -89,7 +89,7 @@
                     android:layout_width="210dp"
                     android:layout_height="168dp"
                     android:text="Garaż"
-                    android:background="@drawable/custom_button"
+                    android:background="@drawable/sketch_button"
                     android:textColor="#FFF"
                     />
 
@@ -98,7 +98,7 @@
                     android:layout_width="200dp"
                     android:layout_height="168dp"
                     android:text="Ogród"
-                    android:background="@drawable/custom_button"
+                    android:background="@drawable/sketch_button"
                     android:textColor="#FFF"/>
             </TableRow>
         </TableLayout>
