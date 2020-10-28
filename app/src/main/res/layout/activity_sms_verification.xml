@@ -53,7 +53,7 @@
             android:cursorVisible="true"
             app:cursorColor="@color/black"
             android:inputType="number"
-            android:onClick="goToMenu">
+            >
 
         </com.chaos.view.PinView>
 
@@ -66,14 +66,15 @@
             android:background="@drawable/login_btn"
             android:fontFamily="sans-serif"
             android:text="@string/check"
-            android:textColor="@color/colorWhite" />
+            android:textColor="@color/colorWhite"
+            android:onClick="goToMenu"/>
 
         <Button
             android:id="@+id/back_btn"
             android:layout_width="200dp"
             android:layout_height="wrap_content"
             android:text="@string/back"
-            android:onClick="goToSignUp"
+            android:onClick="goBack"
             android:layout_gravity="center"
             android:layout_marginHorizontal="16dp"
             android:layout_marginTop="16dp"

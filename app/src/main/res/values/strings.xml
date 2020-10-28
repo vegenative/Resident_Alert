@@ -29,6 +29,11 @@
     <string name="phone">Numer Telefonu</string>
     <string name="phoneNumberEnter">Podaj numer telefonu</string>
     <string name="choose">Wybierz:</string>
+    <string name="Next">Dalej</string>
+    <string name="save">Zapisz</string>
+    <string name="resetPasswordInfo">Wpisz numer telefonu i przejdź dalej aby potwierdzić tożsamość</string>
+    <string name="newPassword">Nowe hasło</string>
+    <string name="confirmNewPassword">Potwiedź nowe hasło</string>
 
     <string-array name="cities_array">
         <item>Tczew</item>

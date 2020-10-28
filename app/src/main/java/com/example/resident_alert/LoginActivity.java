@@ -27,6 +27,7 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
@@ -71,6 +72,12 @@ public class LoginActivity extends AppCompatActivity {
             String fullPhone = "+" + countryCodePicker.getFullNumber() + phone;
             String password = password_et.getText().toString().trim();
 
+            //if is not connected to internet
+            CheckInternet checkInternet = new CheckInternet();
+            if(!checkInternet.isConnected(this)){
+                showCustomDialog();
+            }
+
             if(TextUtils.isEmpty(phone)){
                 phone_et.setError("Pole nie może być puste ");
                 phone_et.requestFocus();
@@ -94,9 +101,7 @@ public class LoginActivity extends AppCompatActivity {
                 Toast.makeText(LoginActivity.this, "Uzupełnij pola", Toast.LENGTH_SHORT).show();
             }
             else {
-                if(!isConnected(this)){
-                    showCustomDialog();
-                }
+
 
 
                 //check user phone and password from the firebase
@@ -140,11 +145,13 @@ public class LoginActivity extends AppCompatActivity {
         signUp_tv.setOnClickListener(v -> {
             Intent intent = new Intent(LoginActivity.this, SignInActivity.class);
             startActivity(intent);
+            finish();
         });
 
 //resetPassword_tv
         resetPassword_tv.setOnClickListener(v -> {
-
+            Intent intent = new Intent(LoginActivity.this, ResetPasswordActivity.class);
+            startActivity(intent);
         });
 
     }
@@ -169,19 +176,7 @@ public class LoginActivity extends AppCompatActivity {
 
 ///////////////////////////////////////Methods/////////////////////////////////////////////////////
 
-// chceck internet connection
-private boolean isConnected(LoginActivity loginActivity) {
-    ConnectivityManager connectivityManager = (ConnectivityManager) loginActivity.getSystemService(Context.CONNECTIVITY_SERVICE);
 
-    NetworkInfo wifiConn = connectivityManager.getNetworkInfo(ConnectivityManager.TYPE_WIFI);
-    NetworkInfo mobileConn = connectivityManager.getNetworkInfo(ConnectivityManager.TYPE_MOBILE);
-
-    if(wifiConn !=null && wifiConn.isConnected() || mobileConn!=null && mobileConn.isConnected()){
-        return true;
-    }else{
-        return true;
-    }
-}
     private void showCustomDialog() {
         AlertDialog.Builder builder = new AlertDialog.Builder(LoginActivity.this);
         builder.setMessage("Aby przejść dalej połącz się z siecią")
@@ -193,7 +188,5 @@ private boolean isConnected(LoginActivity loginActivity) {
                 });
 
     }
-
-//reset password
 
 }

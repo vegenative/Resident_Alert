@@ -23,6 +23,7 @@ import java.util.concurrent.TimeUnit;
 public class SmsVerification extends AppCompatActivity {
 
     private String codeBySystem,email,password,name,surname,phone,street,city,block,flatLetter,flat,stringTel;
+    private boolean resetPassword;
     private TextView smsInfo;
     private PinView pinFromUser_pinView;
     private FirebaseDatabase rootNode;
@@ -62,6 +63,7 @@ public class SmsVerification extends AppCompatActivity {
         block = getIntent().getStringExtra("block");
         flatLetter = getIntent().getStringExtra("flatLetter");
         flat = getIntent().getStringExtra("flat");
+        resetPassword = getIntent().getBooleanExtra("resetPassword",false);
 
         PhoneAuthProvider.getInstance().verifyPhoneNumber(
                 phone,
@@ -111,16 +113,23 @@ public class SmsVerification extends AppCompatActivity {
 
                     if(task.isSuccessful()){
 
-                        StoreUserData(email,password,name,surname,phone,city,street,block,flatLetter,flat);
-                        startActivity(new Intent(getApplicationContext(), MenuActivity.class));
-                        finish();
-
+                        //if is called from ResetPasswordActivity
+                        if(resetPassword == true){
+                            updatePassword();
+                        }
+                        //if is called from SignInInActivity
+                        else{
+                            StoreUserData(email,password,name,surname,phone,city,street,block,flatLetter,flat);
+                            startActivity(new Intent(getApplicationContext(), MenuActivity.class));
+                            finish();
+                        }
                     }
                     else{
                         Toast.makeText(SmsVerification.this, "error" + task.getException().getMessage(), Toast.LENGTH_SHORT).show();
                     }
                 });
     }
+
 
     //OnClickButton
     public void goToMenu(View view) {
@@ -146,9 +155,25 @@ public class SmsVerification extends AppCompatActivity {
         reference.child(phone).setValue(addNewUser);
     }
 
-    public void goToSignUp(View view) {
+    public void goBack(View view) {
+        // go back to previous activity depend on which one
 
-        startActivity(new Intent(getApplicationContext(), SignUpActivity.class));
+        if(resetPassword == true){
+            startActivity(new Intent(getApplicationContext(), ResetPasswordActivity.class));
+        }
+        else{
+            startActivity(new Intent(getApplicationContext(), SignUpActivity.class));
+        }
+
         //zapisywanie wpisanych wczesniej pól
+    }
+
+    private void updatePassword() {
+        // chceck if is Verified Sms and back to Activity to change password
+        Intent goNext = new Intent(SmsVerification.this,ResetPasswordActivity.class);
+        goNext.putExtra("isVerified",true);
+        goNext.putExtra("phone",phone);
+        startActivity(goNext);
+        finish();
     }
 }
