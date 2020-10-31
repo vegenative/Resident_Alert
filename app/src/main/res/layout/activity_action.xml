@@ -5,9 +5,19 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".ActionActivity">
+
+    <TextView
+        android:id="@+id/phoneNumberAction"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="1dp"
+        android:text="TextView"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <ScrollView
-        android:layout_width="410dp"
-        android:layout_height="612dp"
+        android:layout_width="402dp"
+        android:layout_height="666dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/placeText">
 
@@ -17,148 +27,152 @@
 
             <TableRow
                 android:layout_width="match_parent"
-                android:layout_height="match_parent" >
+                android:layout_height="match_parent">
 
                 <Button
 
                     android:id="@+id/installButton"
                     android:layout_width="200dp"
                     android:layout_height="168dp"
-                    android:text="Instalatorskie"
                     android:background="@drawable/sketch_button"
-                    android:textColor="#FFF"/>
+                    android:text="Instalatorskie"
+                    android:textColor="#FFF" />
 
                 <Button
                     android:id="@+id/electricButton"
                     android:layout_width="174dp"
                     android:layout_height="match_parent"
-                    android:text="Elektryczne"
                     android:background="@drawable/sketch_button"
+                    android:text="Elektryczne"
                     android:textColor="#FFF" />
             </TableRow>
 
             <TableRow
                 android:layout_width="match_parent"
-                android:layout_height="match_parent" >
+                android:layout_height="match_parent">
 
                 <Button
                     android:id="@+id/gasButton"
                     android:layout_width="210dp"
                     android:layout_height="168dp"
-                    android:text="Gazowe"
                     android:background="@drawable/sketch_button"
+                    android:text="Gazowe"
                     android:textColor="#FFF" />
 
                 <Button
                     android:id="@+id/waterButton"
                     android:layout_width="200dp"
                     android:layout_height="168dp"
-                    android:text="Wodne"
                     android:background="@drawable/sketch_button"
+                    android:text="Wodne"
                     android:textColor="#FFF" />
 
             </TableRow>
 
             <TableRow
                 android:layout_width="match_parent"
-                android:layout_height="match_parent" >
+                android:layout_height="match_parent">
 
                 <Button
                     android:id="@+id/cominButton"
                     android:layout_width="210dp"
                     android:layout_height="168dp"
-                    android:text="Kominiarskie"
                     android:background="@drawable/sketch_button"
+                    android:text="Kominiarskie"
                     android:textColor="#FFF" />
 
                 <Button
                     android:id="@+id/glassButton"
                     android:layout_width="200dp"
                     android:layout_height="168dp"
-                    android:text="Szklarskie"
                     android:background="@drawable/sketch_button"
+                    android:text="Szklarskie"
                     android:textColor="#FFF" />
             </TableRow>
 
             <TableRow
                 android:layout_width="match_parent"
-                android:layout_height="match_parent" >
+                android:layout_height="match_parent">
 
                 <Button
                     android:id="@+id/decarButton"
                     android:layout_width="210dp"
                     android:layout_height="168dp"
-                    android:text="dekarskie"
                     android:background="@drawable/sketch_button"
-                    android:textColor="#FFF"/>
+                    android:text="dekarskie"
+                    android:textColor="#FFF" />
 
                 <Button
                     android:id="@+id/lockButton"
                     android:layout_width="200dp"
                     android:layout_height="168dp"
-                    android:text="ślusarskie"
                     android:background="@drawable/sketch_button"
-                    android:textColor="#FFF"/>
+                    android:text="ślusarskie"
+                    android:textColor="#FFF" />
             </TableRow>
+
             <TableRow
                 android:layout_width="match_parent"
-                android:layout_height="match_parent" >
+                android:layout_height="match_parent">
 
                 <Button
                     android:id="@+id/constructionButton"
                     android:layout_width="210dp"
                     android:layout_height="168dp"
-                    android:text="Budowlaane"
                     android:background="@drawable/sketch_button"
-                    android:textColor="#FFF"/>
+                    android:text="Budowlaane"
+                    android:textColor="#FFF" />
 
                 <Button
                     android:id="@+id/carpentryButton"
                     android:layout_width="200dp"
                     android:layout_height="168dp"
-                    android:text="Stolarskie"
                     android:background="@drawable/sketch_button"
-                    android:textColor="#FFF"/>
+                    android:text="Stolarskie"
+                    android:textColor="#FFF" />
+
             </TableRow>
+
             <TableRow
                 android:layout_width="match_parent"
-                android:layout_height="match_parent" >
+                android:layout_height="match_parent">
 
                 <Button
                     android:id="@+id/disifectionButton"
                     android:layout_width="210dp"
                     android:layout_height="168dp"
-                    android:text="Dezynfekcja"
                     android:background="@drawable/sketch_button"
+                    android:text="Dezynfekcja"
                     android:textColor="#FFF" />
 
                 <Button
                     android:id="@+id/cleanButton"
                     android:layout_width="200dp"
                     android:layout_height="168dp"
-                    android:text="Sprzatanie"
                     android:background="@drawable/sketch_button"
+                    android:text="Sprzatanie"
                     android:textColor="#FFF" />
             </TableRow>
+
             <TableRow
                 android:layout_width="match_parent"
-                android:layout_height="match_parent" >
+                android:layout_height="match_parent">
 
                 <Button
                     android:id="@+id/otherButton"
                     android:layout_width="210dp"
                     android:layout_height="168dp"
-                    android:text="Inne"
                     android:background="@drawable/sketch_button"
+                    android:text="Inne"
                     android:textColor="#FFF" />
 
                 <Button
                     android:id="@+id/infoButton"
                     android:layout_width="200dp"
                     android:layout_height="168dp"
-                    android:text="Informacyjne"
                     android:background="@drawable/sketch_button"
-                    android:textColor="#FFF"/>
+                    android:text="Informacyjne"
+                    android:textColor="#FFF" />
             </TableRow>
         </TableLayout>
     </ScrollView>

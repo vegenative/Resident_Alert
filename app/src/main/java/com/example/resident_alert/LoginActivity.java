@@ -119,8 +119,10 @@ public class LoginActivity extends AppCompatActivity {
                                 password_et.setError(null);
 
                                 String nameCurrentuser = snapshot.child(fullPhone).child("name").getValue(String.class); //pobieramy imię użytkowniak z bazy danych
+                                String phoneCurrentuser = snapshot.child(fullPhone).child("telephone").getValue(String.class);
 
                                 Intent intent = new Intent(LoginActivity.this, MenuActivity.class);
+                                intent.putExtra("phone",phoneCurrentuser);
                                 startActivity(intent);
                             }
                             else{
@@ -167,11 +169,11 @@ public class LoginActivity extends AppCompatActivity {
         super.onStart();
 
         //if user is already login
-        FirebaseUser currentUser = fAuth.getCurrentUser();
-        if(currentUser!=null){
-            startActivity(new Intent(getApplicationContext(),MenuActivity.class));
-            finish();
-        }
+//        FirebaseUser currentUser = fAuth.getCurrentUser();
+//        if(currentUser!=null){
+//            startActivity(new Intent(getApplicationContext(),MenuActivity.class));
+//            finish();
+//        }
     }
 
 ///////////////////////////////////////Methods/////////////////////////////////////////////////////
