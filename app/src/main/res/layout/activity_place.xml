@@ -7,8 +7,9 @@
     tools:context=".activities.PlaceActivity">
 
     <ScrollView
-        android:layout_width="410dp"
-        android:layout_height="612dp"
+        android:id="@+id/scrollView2"
+        android:layout_width="404dp"
+        android:layout_height="673dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/placeText">
 
@@ -18,15 +19,15 @@
 
             <TableRow
                 android:layout_width="match_parent"
-                android:layout_height="match_parent" >
+                android:layout_height="match_parent">
 
                 <Button
                     android:id="@+id/bathroomButton"
                     android:layout_width="200dp"
                     android:layout_height="168dp"
-                    android:text="Łazienka"
                     android:background="@drawable/sketch_button"
-                    android:textColor="#FFF"/>
+                    android:text="Łazienka"
+                    android:textColor="#FFF" />
 
                 <Button
                     android:id="@+id/kitchenButton"
@@ -39,15 +40,15 @@
 
             <TableRow
                 android:layout_width="match_parent"
-                android:layout_height="match_parent" >
+                android:layout_height="match_parent">
 
                 <Button
                     android:id="@+id/salonButton"
                     android:layout_width="210dp"
                     android:layout_height="168dp"
-                    android:text="Pokój dzienny"
                     android:background="@drawable/sketch_button"
-                    android:textColor="#FFF"/>
+                    android:text="Pokój dzienny"
+                    android:textColor="#FFF" />
 
                 <Button
                     android:id="@+id/corridorButton"
@@ -61,45 +62,44 @@
 
             <TableRow
                 android:layout_width="match_parent"
-                android:layout_height="match_parent" >
+                android:layout_height="match_parent">
 
                 <Button
                     android:id="@+id/cellarButton"
                     android:layout_width="210dp"
                     android:layout_height="168dp"
-                    android:text="Piwnica"
                     android:background="@drawable/sketch_button"
-                    android:textColor="#FFF"/>
+                    android:text="Piwnica"
+                    android:textColor="#FFF" />
 
                 <Button
                     android:id="@+id/staircaseButton"
                     android:layout_width="200dp"
                     android:layout_height="168dp"
-                    android:text="Klatka schodowa"
                     android:background="@drawable/sketch_button"
-                    android:textColor="#FFF"/>
+                    android:text="Klatka schodowa"
+                    android:textColor="#FFF" />
             </TableRow>
 
             <TableRow
                 android:layout_width="match_parent"
-                android:layout_height="match_parent" >
+                android:layout_height="match_parent">
 
                 <Button
                     android:id="@+id/garageButton"
                     android:layout_width="210dp"
                     android:layout_height="168dp"
-                    android:text="Garaż"
                     android:background="@drawable/sketch_button"
-                    android:textColor="#FFF"
-                    />
+                    android:text="Garaż"
+                    android:textColor="#FFF" />
 
                 <Button
                     android:id="@+id/gardenButton"
                     android:layout_width="200dp"
                     android:layout_height="168dp"
-                    android:text="Ogród"
                     android:background="@drawable/sketch_button"
-                    android:textColor="#FFF"/>
+                    android:text="Ogród"
+                    android:textColor="#FFF" />
             </TableRow>
         </TableLayout>
     </ScrollView>
@@ -115,4 +115,15 @@
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/phoneNumberPlace"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="41dp"
+        android:text="TextView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/scrollView2" />
 </androidx.constraintlayout.widget.ConstraintLayout>

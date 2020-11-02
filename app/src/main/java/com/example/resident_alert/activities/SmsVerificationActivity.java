@@ -16,6 +16,7 @@ import com.google.android.gms.tasks.TaskExecutors;
 import com.google.firebase.FirebaseException;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.PhoneAuthCredential;
+import com.google.firebase.auth.PhoneAuthOptions;
 import com.google.firebase.auth.PhoneAuthProvider;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
@@ -75,12 +76,13 @@ public class SmsVerificationActivity extends AppCompatActivity {
                 fCallbacks);
     }
 
+
     private PhoneAuthProvider.OnVerificationStateChangedCallbacks fCallbacks = new PhoneAuthProvider.OnVerificationStateChangedCallbacks() {
         @Override
         public void onCodeSent(@NonNull String s, @NonNull PhoneAuthProvider.ForceResendingToken forceResendingToken) {
             super.onCodeSent(s, forceResendingToken);
 
-             codeBySystem = s;
+            codeBySystem = s;
 
         }
 
@@ -122,7 +124,9 @@ public class SmsVerificationActivity extends AppCompatActivity {
                         //if is called from SignInInActivity
                         else{
                             StoreUserData(email,password,name,surname,phone,city,street,block,flatLetter,flat);
-                            startActivity(new Intent(getApplicationContext(), MenuActivity.class));
+                            Intent intent = new Intent(getApplicationContext(), MenuActivity.class);
+                            intent.putExtra("phone",phone);
+                            startActivity(intent);
                             finish();
                         }
                     }

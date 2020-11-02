@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 
 import com.example.resident_alert.R;
 import com.example.resident_alert.activities.ActionActivity;
@@ -22,6 +23,8 @@ public class PlaceActivity extends AppCompatActivity implements View.OnClickList
     private  Button garageButton;
     private Button gardenButton;
     private String place;
+    public TextView phoneNumberPlace;
+    public String phone;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,6 +48,13 @@ public class PlaceActivity extends AppCompatActivity implements View.OnClickList
         staircaseButton.setOnClickListener(this);
         gardenButton.setOnClickListener(this);
         garageButton.setOnClickListener(this);
+
+
+        Intent intent = getIntent();
+        phone = intent.getStringExtra("phone");
+        phoneNumberPlace = findViewById(R.id.phoneNumberPlace);
+        phoneNumberPlace.setText("Zalogowany jako: "+phone);
+
 
     }
 
@@ -92,6 +102,7 @@ public class PlaceActivity extends AppCompatActivity implements View.OnClickList
     public void transition(String place){
         Intent intent = new Intent(this, ActionActivity.class);
         intent.putExtra("Place",place);
+        intent.putExtra("phone",phone);
         startActivity(intent);
     }
 }

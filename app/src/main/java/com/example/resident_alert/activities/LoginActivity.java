@@ -138,6 +138,7 @@ public class LoginActivity extends AppCompatActivity {
                             if(systemPassword.equals(password)){
                                 password_et.setError(null);
 
+<<<<<<< HEAD:app/src/main/java/com/example/resident_alert/activities/LoginActivity.java
                                 //get data from database
                                 String name_user = snapshot.child(fullPhone).child("name").getValue(String.class);
                                 String surname_user = snapshot.child(fullPhone).child("surname").getValue(String.class);
@@ -149,6 +150,10 @@ public class LoginActivity extends AppCompatActivity {
                                 String flatLatter_user = snapshot.child(fullPhone).child("flatLetter").getValue(String.class);
                                 String flat_User = snapshot.child(fullPhone).child("flat").getValue(String.class);
 
+=======
+                                String nameCurrentuser = snapshot.child(fullPhone).child("name").getValue(String.class); //pobieramy imię użytkowniak z bazy danych
+                                String phoneCurrentuser = snapshot.child(fullPhone).child("telephone").getValue(String.class);
+>>>>>>> KETickets:app/src/main/java/com/example/resident_alert/LoginActivity.java
 
                                 //Create a user Session with data from database
                                 SessionManager sessionManager = new SessionManager(LoginActivity.this, SessionManager.SESSION_USERSESSION);
@@ -160,6 +165,7 @@ public class LoginActivity extends AppCompatActivity {
 
                                 // go to new activity
                                 Intent intent = new Intent(LoginActivity.this, MenuActivity.class);
+                                intent.putExtra("phone",phoneCurrentuser);
                                 startActivity(intent);
                                 finish();
                             }
@@ -216,11 +222,11 @@ public class LoginActivity extends AppCompatActivity {
         super.onStart();
 
         //if user is already login
-        FirebaseUser currentUser = fAuth.getCurrentUser();
-        if(currentUser!=null){
-            startActivity(new Intent(getApplicationContext(),MenuActivity.class));
-            finish();
-        }
+//        FirebaseUser currentUser = fAuth.getCurrentUser();
+//        if(currentUser!=null){
+//            startActivity(new Intent(getApplicationContext(),MenuActivity.class));
+//            finish();
+//        }
     }
 
 ///////////////////////////////////////Methods/////////////////////////////////////////////////////
