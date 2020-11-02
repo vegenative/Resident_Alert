@@ -1,4 +1,4 @@
-package com.example.resident_alert;
+package com.example.resident_alert.activities;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -14,6 +14,7 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.resident_alert.R;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -99,7 +100,7 @@ public class ResetPasswordActivity extends AppCompatActivity {
 
 
                         //push values and go to next activity to VerifyNumber
-                        Intent goToActivity = new Intent(ResetPasswordActivity.this,SmsVerification.class);
+                        Intent goToActivity = new Intent(ResetPasswordActivity.this, SmsVerificationActivity.class);
                         goToActivity.putExtra("phone",fullPhone);
                         goToActivity.putExtra("stringTel",fullPhone); // nie da się przekazać phone
                         goToActivity.putExtra("resetPassword",true);

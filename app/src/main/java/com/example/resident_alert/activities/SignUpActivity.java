@@ -1,4 +1,4 @@
-package com.example.resident_alert;
+package com.example.resident_alert.activities;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -15,7 +15,7 @@ import android.widget.RadioGroup;
 import android.widget.Spinner;
 import android.widget.Toast;
 
-import com.hbb20.CountryCodePicker;
+import com.example.resident_alert.R;
 
 public class SignUpActivity extends AppCompatActivity {
 
@@ -130,7 +130,7 @@ public class SignUpActivity extends AppCompatActivity {
     private void passValuesToActivity(String name,String surname,String phone,String street,String city, String block,
                                       String flatLetter,String flat,String stringTel,String email,String password){
         //pass all fields to the next activity
-        Intent goNext = new Intent(this,SmsVerification.class);
+        Intent goNext = new Intent(this, SmsVerificationActivity.class);
 
         goNext.putExtra("name",name);
         goNext.putExtra("surname",surname);

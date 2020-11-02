@@ -1,4 +1,4 @@
-package com.example.resident_alert;
+package com.example.resident_alert.activities;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.viewpager.widget.ViewPager;
@@ -6,11 +6,15 @@ import androidx.viewpager.widget.ViewPager;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.Html;
-import android.transition.Slide;
 import android.view.View;
 import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+
+import com.example.resident_alert.R;
+import com.example.resident_alert.adapters.SliderAdapter;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 
 public class StartActivity extends AppCompatActivity {
 
@@ -23,6 +27,8 @@ public class StartActivity extends AppCompatActivity {
 
     private Button mLogin;
 
+    private FirebaseAuth fAuth;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -31,7 +37,14 @@ public class StartActivity extends AppCompatActivity {
         mSlideViewPager = (ViewPager) findViewById(R.id.slideViewPager);
         mDotLayout = (LinearLayout) findViewById(R.id.dotsLayout);
 
+        fAuth = FirebaseAuth.getInstance();
 
+        //if user is already login
+        FirebaseUser currentUser = fAuth.getCurrentUser();
+        if(currentUser!=null){
+            startActivity(new Intent(getApplicationContext(), MenuActivity.class));
+            finish();
+        }
 
         mLogin.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -54,7 +67,7 @@ public class StartActivity extends AppCompatActivity {
     }
 
     public void openLoginActivity(){
-        Intent intent = new Intent(this, PlaceActivity.class);
+        Intent intent = new Intent(this, LoginActivity.class);
         startActivity(intent);
     }
 

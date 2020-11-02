@@ -2,6 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.resident_alert">
 
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.INTERNET" />
 
     <application
@@ -11,21 +12,17 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-<<<<<<< HEAD
-        <activity android:name=".ResetPasswordActivity"></activity>
-        <activity android:name=".SmsVerification" />
-        <activity android:name=".SignInActivity" />
-        <activity android:name=".MenuActivity" />
-        <activity android:name=".StartActivity" />
-=======
-        <activity android:name=".CompleteActivity"></activity>
-        <activity android:name=".ActionActivity" />
-        <activity android:name=".PlaceActivity" />
-        <activity android:name=".MenuActivity" />
-        <activity android:name=".LoginActivity" />
->>>>>>> KEHome
-        <activity android:name=".SignUpActivity" />
-        <activity android:name=".LoginActivity">
+
+        <activity android:name=".activities.ResetPasswordActivity"/>
+        <activity android:name=".activities.SmsVerificationActivity" />
+        <activity android:name=".activities.SignInActivity" />
+        <activity android:name=".activities.MenuActivity" />
+        <activity android:name=".activities.StartActivity" />
+        <activity android:name=".activities.CompleteActivity"/>
+        <activity android:name=".activities.ActionActivity" />
+        <activity android:name=".activities.PlaceActivity" />
+        <activity android:name=".activities.SignUpActivity" />
+        <activity android:name=".activities.LoginActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

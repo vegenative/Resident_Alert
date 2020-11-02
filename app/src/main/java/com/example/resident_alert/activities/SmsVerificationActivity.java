@@ -1,4 +1,4 @@
-package com.example.resident_alert;
+package com.example.resident_alert.activities;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -10,6 +10,8 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.chaos.view.PinView;
+import com.example.resident_alert.R;
+import com.example.resident_alert.UserHelperClass;
 import com.google.android.gms.tasks.TaskExecutors;
 import com.google.firebase.FirebaseException;
 import com.google.firebase.auth.FirebaseAuth;
@@ -20,7 +22,7 @@ import com.google.firebase.database.FirebaseDatabase;
 
 import java.util.concurrent.TimeUnit;
 
-public class SmsVerification extends AppCompatActivity {
+public class SmsVerificationActivity extends AppCompatActivity {
 
     private String codeBySystem,email,password,name,surname,phone,street,city,block,flatLetter,flat,stringTel;
     private boolean resetPassword;
@@ -94,7 +96,7 @@ public class SmsVerification extends AppCompatActivity {
 
         @Override
         public void onVerificationFailed(@NonNull FirebaseException e) {
-            Toast.makeText(SmsVerification.this,e.getMessage(),Toast.LENGTH_SHORT).show();
+            Toast.makeText(SmsVerificationActivity.this,e.getMessage(),Toast.LENGTH_SHORT).show();
         }
     };
 
@@ -109,7 +111,7 @@ public class SmsVerification extends AppCompatActivity {
         FirebaseAuth fAuth = FirebaseAuth.getInstance();
 
         fAuth.signInWithCredential(credential)
-                .addOnCompleteListener(SmsVerification.this, task -> {
+                .addOnCompleteListener(SmsVerificationActivity.this, task -> {
 
                     if(task.isSuccessful()){
 
@@ -125,7 +127,7 @@ public class SmsVerification extends AppCompatActivity {
                         }
                     }
                     else{
-                        Toast.makeText(SmsVerification.this, "error" + task.getException().getMessage(), Toast.LENGTH_SHORT).show();
+                        Toast.makeText(SmsVerificationActivity.this, "error" + task.getException().getMessage(), Toast.LENGTH_SHORT).show();
                     }
                 });
     }
@@ -170,7 +172,7 @@ public class SmsVerification extends AppCompatActivity {
 
     private void updatePassword() {
         // chceck if is Verified Sms and back to Activity to change password
-        Intent goNext = new Intent(SmsVerification.this,ResetPasswordActivity.class);
+        Intent goNext = new Intent(SmsVerificationActivity.this,ResetPasswordActivity.class);
         goNext.putExtra("isVerified",true);
         goNext.putExtra("phone",phone);
         startActivity(goNext);

@@ -1,15 +1,15 @@
-package com.example.resident_alert;
+package com.example.resident_alert.activities;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
-import android.util.Patterns;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
+import com.example.resident_alert.R;
 import com.hbb20.CountryCodePicker;
 
 public class SignInActivity extends AppCompatActivity {
@@ -57,7 +57,7 @@ public class SignInActivity extends AppCompatActivity {
     //pass values and goes to the next activity
     private void passValuesToActivity(String phone,String password,String stringTel){
 
-        Intent goToActivity = new Intent(SignInActivity.this,SignUpActivity.class);
+        Intent goToActivity = new Intent(SignInActivity.this, SignUpActivity.class);
 
         goToActivity.putExtra("phone",phone);
         goToActivity.putExtra("stringTel",stringTel);

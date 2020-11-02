@@ -1,4 +1,4 @@
-package com.example.resident_alert;
+package com.example.resident_alert.network;
 
 import android.content.Context;
 import android.net.ConnectivityManager;

@@ -17,7 +17,7 @@
     <string name="noAccount">Nie masz konta?</string>
     <string name="signUp_tv">Zarejestruj się</string>
     <string name="forgotPasswordtxt">"Nie pamiętasz hasła? "</string>
-    <string name="forgotPasswordTv">Zresetuj</string>
+    <string name="forgotPasswordTv">Zresetuj hasło</string>
     <string name="logut_btn">Wyloguj się</string>
     <string name="goSignIn">Przejdź dalej</string>
     <string name="alreadyHaveAccount">"Masz już konto? "</string>
@@ -34,6 +34,7 @@
     <string name="resetPasswordInfo">Wpisz numer telefonu i przejdź dalej aby potwierdzić tożsamość</string>
     <string name="newPassword">Nowe hasło</string>
     <string name="confirmNewPassword">Potwiedź nowe hasło</string>
+    <string name="rememberMe">Zapamiętaj mnie</string>
 
     <string-array name="cities_array">
         <item>Tczew</item>

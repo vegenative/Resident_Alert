@@ -1,10 +1,12 @@
-package com.example.resident_alert;
+package com.example.resident_alert.activities;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.widget.TextView;
+
+import com.example.resident_alert.R;
 
 public class CompleteActivity extends AppCompatActivity {
         TextView testText;

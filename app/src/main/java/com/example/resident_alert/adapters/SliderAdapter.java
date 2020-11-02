@@ -1,4 +1,4 @@
-package com.example.resident_alert;
+package com.example.resident_alert.adapters;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -11,6 +11,8 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.viewpager.widget.PagerAdapter;
+
+import com.example.resident_alert.R;
 
 public class SliderAdapter extends PagerAdapter {
 
