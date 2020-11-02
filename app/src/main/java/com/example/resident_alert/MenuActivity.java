@@ -9,6 +9,8 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.resident_alert.activities.LoginActivity;
+import com.example.resident_alert.activities.PlaceActivity;
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
 import com.google.firebase.auth.FirebaseAuth;
 
@@ -53,7 +55,7 @@ public class MenuActivity extends AppCompatActivity {
     public void logout() {
         FirebaseAuth.getInstance().signOut();
 
-        startActivity(new Intent(getApplicationContext(),LoginActivity.class));
+        startActivity(new Intent(getApplicationContext(), LoginActivity.class));
         finish();
     }
 }

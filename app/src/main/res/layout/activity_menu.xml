@@ -16,7 +16,7 @@
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-<<<<<<< HEAD
+
         app:layout_constraintVertical_bias="0.178" />
 
     <TextView
@@ -28,8 +28,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/logout_btn" />
-=======
-        app:layout_constraintVertical_bias="0.7" />
+
 
     <Button
         android:id="@+id/ticketButton"
@@ -50,5 +49,5 @@
         android:text="TextView"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/ticketButton" />
->>>>>>> KETickets
+
 </androidx.constraintlayout.widget.ConstraintLayout>

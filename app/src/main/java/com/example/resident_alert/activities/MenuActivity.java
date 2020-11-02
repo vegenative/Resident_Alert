@@ -18,6 +18,7 @@ import java.util.HashMap;
 public class MenuActivity extends AppCompatActivity {
 
     private Button logout_btn;
+    private Button ticketButton;
     private TextView dataInfo_tv;
 
     @Override
@@ -37,6 +38,14 @@ public class MenuActivity extends AppCompatActivity {
         String email = userDetails.get(sessionManager.KEY_EMAIL);
 
         dataInfo_tv.setText(name +"\n"+ surname +"\n"+ phone +"\n"+ email);
+
+        ticketButton = findViewById(R.id.ticketButton);
+        ticketButton.setOnClickListener(v -> {
+            Intent intent2 = new Intent(this, PlaceActivity.class);
+
+            startActivity(intent2);
+
+        });
 
 
         logout_btn.setOnClickListener(v -> {

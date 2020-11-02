@@ -4,10 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-<<<<<<< HEAD
+
     tools:context=".activities.ActionActivity">
-=======
-    tools:context=".ActionActivity">
 
     <TextView
         android:id="@+id/phoneNumberAction"
@@ -18,7 +16,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
->>>>>>> KETickets
     <ScrollView
         android:layout_width="402dp"
         android:layout_height="666dp"
