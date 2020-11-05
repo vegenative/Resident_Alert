@@ -7,6 +7,17 @@
     android:layout_height="match_parent"
     android:background="@color/colorWhite"
     tools:context=".activities.StartActivity">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:visibility="visible"
+        android:orientation="vertical">
+
 
     <androidx.viewpager.widget.ViewPager
         android:id="@+id/slideViewPager"
@@ -14,7 +25,8 @@
         android:layout_height="600dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_gravity="center">
 
     </androidx.viewpager.widget.ViewPager>
 
@@ -29,7 +41,8 @@
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/slideViewPager"
-        app:layout_constraintVertical_bias="0.114">
+        app:layout_constraintVertical_bias="0.114"
+        android:layout_gravity="center">
 
     </LinearLayout>
 
@@ -45,6 +58,9 @@
         app:layout_constraintTop_toBottomOf="@+id/dotsLayout"
         android:textColor="@color/colorWhite"
         android:textFontWeight="400"
-        android:textSize="26dp"/>
+        android:textSize="26dp"
+        android:layout_gravity="center"/>
+
+    </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
