@@ -141,18 +141,6 @@ public class LoginActivity extends AppCompatActivity {
     protected void onStart() {
         super.onStart();
 
-        ///
-        /// to idzie w onStart() w HomeActivity
-        ///
-        ///
-        //if user is already logged in
-        /*
-        if(FirebaseAuth.getInstance().getCurrentUser()!=null){
-            startActivity(new Intent(getApplicationContext(), MenuActivity.class));
-            finish();
-        }
-
-         */
 
     }
 

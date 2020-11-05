@@ -35,6 +35,7 @@
     <string name="newPassword">Nowe hasło</string>
     <string name="confirmNewPassword">Potwiedź nowe hasło</string>
     <string name="rememberMe">Zapamiętaj mnie</string>
+    <string name="goNext">Przejdź dalej</string>
 
     <string-array name="cities_array">
         <item>Tczew</item>

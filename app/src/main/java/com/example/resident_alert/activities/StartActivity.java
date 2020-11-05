@@ -41,10 +41,7 @@ public class StartActivity extends AppCompatActivity {
 
         //if user is already login
         FirebaseUser currentUser = fAuth.getCurrentUser();
-        if(currentUser!=null){
-            startActivity(new Intent(getApplicationContext(), MenuActivity.class));
-            finish();
-        }
+
 
         mLogin.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -67,8 +64,14 @@ public class StartActivity extends AppCompatActivity {
     }
 
     public void openLoginActivity(){
-        Intent intent = new Intent(this, LoginActivity.class);
-        startActivity(intent);
+        //if user is already logged in
+        if(FirebaseAuth.getInstance().getCurrentUser()!=null){
+            startActivity(new Intent(getApplicationContext(), MenuActivity.class));
+            finish();
+        }else {
+            startActivity( new Intent(this, LoginActivity.class));
+
+        }
     }
 
     public void addDotIndicator(int position){
@@ -80,12 +83,12 @@ public class StartActivity extends AppCompatActivity {
             mDots[i] = new TextView(this);
             mDots[i].setText(Html.fromHtml("&#8226;"));
             mDots[i].setTextSize(35);
-            mDots[i].setTextColor(getResources().getColor(R.color.colorTransparentWhite));
+            mDots[i].setTextColor(getResources().getColor(R.color.colorDots));
 
             mDotLayout.addView(mDots[i]);
         }
         if(mDots.length > 0){
-            mDots[position].setTextColor(getResources().getColor(R.color.colorWhite));
+            mDots[position].setTextColor(getResources().getColor(R.color.colorAccentLogin));
         }
 
     }
@@ -107,6 +110,17 @@ public class StartActivity extends AppCompatActivity {
         }
     };
 
+    @Override
+    protected void onStart() {
+        super.onStart();
 
+
+
+
+
+
+
+
+    }
 
 }

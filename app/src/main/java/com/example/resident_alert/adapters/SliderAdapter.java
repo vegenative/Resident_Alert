@@ -26,15 +26,16 @@ public class SliderAdapter extends PagerAdapter {
     }
 
     public int[] slide_images = {
-            R.drawable.human,
-            R.drawable.hammer,
-            R.drawable.setting
+            R.drawable.part3,
+            R.drawable.part2,
+            R.drawable.part1
     };
 
     public String[] slide_header = {
-            "Zarzadzej usterkami",
-            "Naprawa zostanie zgłoszona w 15 sekund",
-            "Sprawdź historie swoich zgłoszeń"
+            "Potrzeba tylko chwili aby zgłosić cieknący kran",
+            "Mieszkanie jest pod Twoją ochroną",
+            "Masz pełen wgląd w historie zgłoszonych usterek"
+
     };
 
     public String[] slide_description = {

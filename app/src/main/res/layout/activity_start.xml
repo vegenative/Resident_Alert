@@ -5,7 +5,7 @@
     android:id="@+id/login"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/background"
+    android:background="@color/colorWhite"
     tools:context=".activities.StartActivity">
 
     <androidx.viewpager.widget.ViewPager
@@ -38,10 +38,13 @@
         android:layout_width="295dp"
         android:layout_height="50dp"
         android:layout_marginTop="12dp"
-        android:background="@drawable/custom_button"
-        android:text="Zaloguj sie"
+        android:background="@drawable/login_btn"
+        android:text="@string/goNext"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/dotsLayout" />
+        app:layout_constraintTop_toBottomOf="@+id/dotsLayout"
+        android:textColor="@color/colorWhite"
+        android:textFontWeight="400"
+        android:textSize="26dp"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

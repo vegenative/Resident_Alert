@@ -13,5 +13,6 @@
     <color name="colorAccentLogin">#236B82</color>
     <color name="colorPrimary">#6200EE</color>
     <color name="colorPrimaryDark">#3700B3</color>
+    <color name="colorDots">#702E5998</color>
 
 </resources>
