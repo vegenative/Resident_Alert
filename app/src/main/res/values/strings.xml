@@ -36,6 +36,15 @@
     <string name="confirmNewPassword">Potwiedź nowe hasło</string>
     <string name="rememberMe">Zapamiętaj mnie</string>
     <string name="goNext">Przejdź dalej</string>
+    <string name="sendTicket">Wyślij zgłoszenie</string>
+    <string name="checkHistory">Sprawdź historie</string>
+    <string name="checkProfile">Sprawdź profil</string>
+    <string name="submitTicket">Wyślij zgłoszenie</string>
+
+    <string name="userPhone">Zalogowany jako:</string>
+    <string name="placeName">Miejsce usterki:</string>
+    <string name="actionName">Rodzaj usterki:</string>
+    <string name="infoText">Szczegóły zgłoszenia</string>
 
     <string-array name="cities_array">
         <item>Tczew</item>

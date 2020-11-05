@@ -19,10 +19,11 @@
         <activity android:name=".activities.SignInActivity" />
         <activity android:name=".activities.MenuActivity" />
         <activity android:name=".activities.CompleteActivity"/>
-        <activity android:name=".activities.ActionActivity" />
-        <activity android:name=".activities.PlaceActivity" />
         <activity android:name=".activities.SignUpActivity" />
-            <activity android:name=".activities.StartActivity" >
+
+        <activity android:name=".activities.ActionActivity"/>
+        <activity android:name=".activities.PlaceActivity" />
+        <activity android:name=".activities.StartActivity" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

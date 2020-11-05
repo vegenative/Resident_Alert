@@ -4,8 +4,11 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
+import android.widget.Button;
+import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -25,62 +28,71 @@ import com.example.resident_alert.R;
 import java.util.HashMap;
 
 public class CompleteActivity extends AppCompatActivity {
-        TextView testText;
+
     private FirebaseDatabase rootNode;
     private DatabaseReference reference;
     public String phone;
+    public String placeName;
+    public String actionName;
+    private TextView phoneNameText;
+    private TextView placeNameText;
+    private TextView actionNameText;
+    private EditText infoNameText;
+    private Button submitTicket;
+    public String infoText;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_complete);
 
-        testText = findViewById(R.id.testText);
+        phoneNameText = findViewById(R.id.phoneNameText);
+        placeNameText = findViewById(R.id.placeNameText);
+        actionNameText = findViewById(R.id.actionNameText);
+        infoNameText = findViewById(R.id.infoNameText);
+        submitTicket = findViewById(R.id.submitTicket);
 
+
+
+        Intent intent = getIntent();
+        placeName = intent.getStringExtra("Place");
+        actionName = intent.getStringExtra("Action");
 
 
         SessionManager sessionManager = new SessionManager(this,SessionManager.SESSION_USERSESSION);
         HashMap<String,String> userDetails = sessionManager.getUserDetailFromSession();
 
-        String name = userDetails.get(sessionManager.KEY_NAME);
-        String surname = userDetails.get(sessionManager.KEY_SURNAME);
-        phone = userDetails.get(sessionManager.KEY_PHONE);
-        String email = userDetails.get(sessionManager.KEY_EMAIL);
 
-        testText.setText("Usterka w "+name+ " Zalogowany jako: "+ phone);
-        StoreUserData(name,email);
+        phone = userDetails.get(sessionManager.KEY_PHONE);
+        phoneNameText.setText(phone);
+        placeNameText.setText(placeName);
+        actionNameText.setText(actionName);
+
+
+        submitTicket.setOnClickListener(v -> {
+            ProgressDialog progressDialog = new ProgressDialog(this);
+            progressDialog.show();
+            progressDialog.setContentView(R.layout.progres_dialog);
+            progressDialog.getWindow().setBackgroundDrawableResource(android.R.color.transparent);
+
+            infoText = infoNameText.getText().toString();
+            StoreUserData(placeName,actionName,infoText);
+            progressDialog.dismiss();
+            Toast.makeText(this,"Zgłoszenie zostało wysłane",Toast.LENGTH_SHORT).show();
+            startActivity(new Intent(this,MenuActivity.class));
+        });
+
+
 
     }
-    private void StoreUserData(String place, String action){
-
-//        Query checkUserTelephone = FirebaseDatabase.getInstance().getReference("Users").orderByChild("telephone").equalTo(phone);
-//
-//        checkUserTelephone.addListenerForSingleValueEvent(new ValueEventListener() {
-//            @Override
-//            public void onDataChange(@NonNull DataSnapshot snapshot) {
-//                if(snapshot.exists()){
-//                    String phoneCurrentuser = snapshot.child(fullPhone).child("telephone").getValue(String.class);
-//                    int ticketNumber = snapshot.child(phone).child("tickets").
-//                }
-//            }
-//
-//            @Override
-//            public void onCancelled(@NonNull DatabaseError error) {
-//                Toast.makeText(CompleteActivity.this,"Coś poszło nie tak",Toast.LENGTH_SHORT).show();
-//            }
-//        });
-
-
-
-
-
+    private void StoreUserData(String place, String action, String info){
 
 
         rootNode = FirebaseDatabase.getInstance();
         reference = rootNode.getReference("Users/"+phone);
 
         UserHelperClass addNewTicket =
-                new UserHelperClass(place,action);
+                new UserHelperClass(place,action,info);
 
 
         reference.child("tickets").push().setValue(addNewTicket);

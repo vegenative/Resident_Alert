@@ -5,49 +5,71 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".activities.MenuActivity">
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:visibility="visible"
+    android:orientation="vertical">
 
-    <Button
-        android:id="@+id/logout_btn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/logut_btn"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-
-        app:layout_constraintVertical_bias="0.178" />
-
-    <TextView
-        android:id="@+id/dataInfo"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="80dp"
-        android:text="TextView"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/logout_btn" />
 
 
     <Button
         android:id="@+id/ticketButton"
-        android:layout_width="wrap_content"
+        android:layout_width="200dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="125dp"
-        android:layout_marginTop="91dp"
-        android:text="Wyślij zgłoszenie"
+        android:layout_marginTop="200dp"
+        android:text="@string/sendTicket"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        android:textColor="@color/colorWhite"
+        android:textFontWeight="300"
+        android:textSize="25dp"
+        android:layout_gravity="center"
+        android:background="@drawable/login_btn"
+        android:fontFamily="@font/roboto"/>
+    <Button
+        android:id="@+id/historyButton"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:text="@string/checkHistory"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:textColor="@color/black"
+        android:textFontWeight="300"
+        android:textSize="25dp"
+        android:layout_gravity="center"
+        android:background="@drawable/button_border"
+        android:fontFamily="@font/roboto"/>
+    <Button
+        android:id="@+id/profileButton"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:text="@string/checkProfile"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:textColor="@color/black"
+        android:textFontWeight="300"
+        android:textSize="25dp"
+        android:layout_gravity="center"
+        android:background="@drawable/button_border"
+        android:fontFamily="@font/roboto"/>
 
-    <TextView
-        android:id="@+id/testText2"
-        android:layout_width="wrap_content"
+    <Button
+        android:id="@+id/logout_btn"
+        android:layout_width="200dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="176dp"
-        android:layout_marginTop="568dp"
-        android:text="TextView"
+        android:layout_marginTop="50dp"
+        android:text="@string/logut_btn"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/ticketButton" />
+        app:layout_constraintTop_toTopOf="parent"
+        android:textColor="@color/black"
+        android:textFontWeight="300"
+        android:textSize="25dp"
+        android:layout_gravity="center"
+        android:background="@drawable/button_border"
+        android:fontFamily="@font/roboto"/>
+</LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

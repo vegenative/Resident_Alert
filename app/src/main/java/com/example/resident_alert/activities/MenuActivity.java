@@ -28,21 +28,19 @@ public class MenuActivity extends AppCompatActivity {
         setContentView(R.layout.activity_menu);
 
         logout_btn = (Button) findViewById(R.id.logout_btn);
-        dataInfo_tv = (TextView) findViewById(R.id.dataInfo);
 
-        SessionManager sessionManager = new SessionManager(this,SessionManager.SESSION_USERSESSION);
-        HashMap<String,String> userDetails = sessionManager.getUserDetailFromSession();
 
-        String name = userDetails.get(sessionManager.KEY_NAME);
-        String surname = userDetails.get(sessionManager.KEY_SURNAME);
-        String phone = userDetails.get(sessionManager.KEY_PHONE);
-        String email = userDetails.get(sessionManager.KEY_EMAIL);
+//        SessionManager sessionManager = new SessionManager(this,SessionManager.SESSION_USERSESSION);
+//        HashMap<String,String> userDetails = sessionManager.getUserDetailFromSession();
+//
+//        String name = userDetails.get(sessionManager.KEY_NAME);
+//        String surname = userDetails.get(sessionManager.KEY_SURNAME);
+//        String phone = userDetails.get(sessionManager.KEY_PHONE);
+//        String email = userDetails.get(sessionManager.KEY_EMAIL);
+//
+//
 
-        dataInfo_tv.setText(name +"\n"+ surname +"\n"+ phone +"\n"+ email);
 
-        if(FirebaseAuth.getInstance().getCurrentUser() != null){
-            Toast.makeText(this,"Jest użytkownik",Toast.LENGTH_LONG).show();
-        }
 
         ticketButton = findViewById(R.id.ticketButton);
         ticketButton.setOnClickListener(v -> {

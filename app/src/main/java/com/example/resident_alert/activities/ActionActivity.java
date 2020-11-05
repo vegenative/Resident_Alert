@@ -28,8 +28,8 @@ public class ActionActivity extends AppCompatActivity implements View.OnClickLis
     private Button infoButton;
     private String action;
     public String placeName;
-    public TextView phoneNumberAction;
-    public String phone;
+
+
 
 
     @Override
@@ -73,9 +73,8 @@ public class ActionActivity extends AppCompatActivity implements View.OnClickLis
         Intent intent = getIntent();
         placeName = intent.getStringExtra("Place");
 
-        phone = intent.getStringExtra("phone");
-        phoneNumberAction = findViewById(R.id.phoneNumberAction);
-        phoneNumberAction.setText("Zalogowany jako: "+phone);
+
+
 
         placeText.setText("Jakiego rodzaju jest usterka w "+placeName+"?");
 
@@ -151,7 +150,6 @@ public class ActionActivity extends AppCompatActivity implements View.OnClickLis
         Intent intentt = new Intent(this, CompleteActivity.class);
         intentt.putExtra("Place",placeName);
         intentt.putExtra("Action",action);
-        intentt.putExtra("phone",phone);
         startActivity(intentt);
     }
 }

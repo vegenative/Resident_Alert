@@ -6,13 +6,151 @@
     android:layout_height="match_parent"
     tools:context=".activities.CompleteActivity">
 
-    <TextView
-        android:id="@+id/testText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="280dp"
-        android:text="TextView"
+    <LinearLayout
+        android:id="@+id/lign_ll"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        tools:visibility="visible">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:layout_marginTop="100dp">
+
+        <TextView
+            android:id="@+id/phoneText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/userPhone"
+            android:fontFamily="@font/roboto"
+            android:textSize="24sp"
+            />
+        <TextView
+            android:id="@+id/phoneNameText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="test"
+            android:layout_marginLeft="80dp"
+            android:fontFamily="@font/roboto"
+            android:textSize="24sp"/>
+
+
+    </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:layout_marginTop="50dp">
+
+            <TextView
+                android:id="@+id/placeText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/placeName"
+                android:fontFamily="@font/roboto"
+                android:textSize="24sp"
+                />
+            <TextView
+                android:id="@+id/placeNameText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="test"
+                android:layout_marginLeft="100dp"
+                android:fontFamily="@font/roboto"
+                android:textSize="24sp"/>
+
+
+        </LinearLayout>
+            <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:layout_marginTop="50dp"
+                >
+
+            <TextView
+                android:id="@+id/actionText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/actionName"
+                android:fontFamily="@font/roboto"
+                android:textSize="24sp"
+                />
+            <TextView
+                android:id="@+id/actionNameText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="test"
+                android:layout_marginLeft="110dp"
+                android:fontFamily="@font/roboto"
+                android:textSize="24sp"/>
+
+
+            </LinearLayout>
+                <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:layout_marginTop="50dp">
+
+            <TextView
+                android:id="@+id/infoText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/infoText"
+                android:fontFamily="@font/roboto"
+                android:textSize="30sp"/>
+
+
+
+                </LinearLayout>
+        <EditText
+            android:id="@+id/infoNameText"
+            android:layout_width="300dp"
+            android:layout_height="200dp"
+            android:hint="Wpisz szczegóły zgłoszenia"
+            android:padding="5dp"
+            android:layout_gravity="center"
+            android:gravity="top"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/complete_edittext_border"
+            android:fontFamily="@font/lato"
+            android:textSize="15sp"
+            android:inputType="textCapSentences|textAutoCorrect"
+            android:imeOptions="actionNext"/>
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/submitTicket"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_gravity="center"
+            android:layout_marginTop="30dp"
+            android:text="@string/sendTicket"
+            android:fontFamily="@font/roboto"
+            android:background="@drawable/login_btn"
+            android:textColor="@color/colorWhite"/>
+
+
+
+
+
+    </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

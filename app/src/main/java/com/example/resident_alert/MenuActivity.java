@@ -28,8 +28,7 @@ public class MenuActivity extends AppCompatActivity {
 
         Intent intent = getIntent();
         String phone = intent.getStringExtra("phone");
-        phoneNumber = findViewById(R.id.testText2);
-        phoneNumber.setText("Zalogowany jako: "+phone);
+
 
 
 
