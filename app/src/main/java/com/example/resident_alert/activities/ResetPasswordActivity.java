@@ -101,7 +101,7 @@ public class ResetPasswordActivity extends AppCompatActivity {
 
                         //push values and go to next activity to VerifyNumber
                         Intent goToActivity = new Intent(ResetPasswordActivity.this, SmsVerificationActivity.class);
-                        goToActivity.putExtra("phone",fullPhone);
+                        goToActivity.putExtra("fullPhone",fullPhone);
                         goToActivity.putExtra("stringTel",fullPhone); // nie da się przekazać phone
                         goToActivity.putExtra("resetPassword",true);
                         startActivity(goToActivity);
@@ -126,7 +126,7 @@ public class ResetPasswordActivity extends AppCompatActivity {
     public void saveNewData(View view) {
 
         //take phone Number that was verified
-        String fullPhone = getIntent().getStringExtra("phone");
+        String fullPhone = getIntent().getStringExtra("fullPhone");
 
         // take new password from the fields
         String newPassword = changePassword_et.getText().toString().trim();

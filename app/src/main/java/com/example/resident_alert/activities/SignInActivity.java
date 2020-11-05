@@ -10,6 +10,8 @@ import android.widget.Button;
 import android.widget.EditText;
 
 import com.example.resident_alert.R;
+import com.example.resident_alert.SessionManager;
+import com.google.firebase.auth.FirebaseAuth;
 import com.hbb20.CountryCodePicker;
 
 public class SignInActivity extends AppCompatActivity {
@@ -28,66 +30,69 @@ public class SignInActivity extends AppCompatActivity {
         signUpBtn = (Button) findViewById(R.id.signup_button);
         //edit text
         phone_et = (EditText) findViewById(R.id.phone_et);
-        password_et = (EditText) findViewById(R.id.password_et);
-        cnfPassword_et = (EditText) findViewById(R.id.cnfPassword_et);
+
         //countryCodePicker
         countryCodePicker = (CountryCodePicker) findViewById(R.id.countryCodePickerLogin);
+
+        //if user is coming from smsVerification but don't have data i database set his number to et
+        if(FirebaseAuth.getInstance().getCurrentUser()!=null){
+            String _phone = getIntent().getStringExtra("phone");
+            phone_et.setText(_phone);
+        }
     }
 
 
 
 
     public void goToLoginScreen(View view) {
+
+        //if user go back, log out if exist and back to LoginActivity
+        if(FirebaseAuth.getInstance().getCurrentUser()!=null){
+            FirebaseAuth.getInstance().signOut();
+
+            SessionManager sessionManager = new SessionManager(SignInActivity.this, SessionManager.SESSION_USERSESSION);
+            sessionManager.logoutUserSession();
+        }
+
         Intent intent = new Intent(SignInActivity.this, LoginActivity.class);
         startActivity(intent);
     };
 
     public void goToSignUp(View view) {
 
-        String stringTel = phone_et.getText().toString().trim();
-        String phone = "+" + countryCodePicker.getFullNumber() + stringTel;
-
-        String password = password_et.getText().toString().trim();
-        String cnfPassword = cnfPassword_et.getText().toString().trim();
+        String phone = phone_et.getText().toString().trim();
+        String fullPhone = "+" + countryCodePicker.getFullNumber() + phone;
 
 
-        validation(phone,password,cnfPassword,stringTel);
+
+        validation(fullPhone,phone);
     }
 
     //pass values and goes to the next activity
-    private void passValuesToActivity(String phone,String password,String stringTel){
+    private void passValuesToActivity(String fullPhone,String phone){
 
         Intent goToActivity = new Intent(SignInActivity.this, SignUpActivity.class);
 
+        goToActivity.putExtra("fullPhone",fullPhone);
         goToActivity.putExtra("phone",phone);
-        goToActivity.putExtra("stringTel",stringTel);
-        goToActivity.putExtra("password",password);
+
 
         startActivity(goToActivity);
 
     }
 
-    private void validation(String phone,String password, String cnfPassword,String stringTel){
-        if (TextUtils.isEmpty(stringTel)){
+    private void validation(String fullPhone,String phone){
+        if (TextUtils.isEmpty(phone)){
             phone_et.setError("Pole nie może być puste");
             phone_et.requestFocus();
         }
-        else if (stringTel.length() != 9){
+        else if (phone.length() != 9){
             phone_et.setError("Numer telefonu musi posiadać 9 cyfr");
             phone_et.requestFocus();
 
         }
-        else if(password.length() < 6){
-            password_et.setError("Hasło musi posiadać co najmniej 6 znaków");
-            password_et.requestFocus();
-        }
-        else if(!cnfPassword.equals(password))
-        {
-            cnfPassword_et.setError("Hasła muszą być takie same");
-            password_et.requestFocus();
-        }
         else{
-            passValuesToActivity(phone,password,stringTel);
+            passValuesToActivity(fullPhone,phone);
         }
 
 

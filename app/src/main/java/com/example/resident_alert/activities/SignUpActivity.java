@@ -16,6 +16,10 @@ import android.widget.Spinner;
 import android.widget.Toast;
 
 import com.example.resident_alert.R;
+import com.example.resident_alert.UserHelperClass;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 public class SignUpActivity extends AppCompatActivity {
 
@@ -25,6 +29,8 @@ public class SignUpActivity extends AppCompatActivity {
     private RadioGroup radioGroup;
     private RadioButton radioButton;
     private boolean isFlat = true;
+
+    FirebaseAuth fAuth = FirebaseAuth.getInstance();
 
 
 
@@ -102,12 +108,25 @@ public class SignUpActivity extends AppCompatActivity {
 
             else {
                 //get values from previous activity
-                String stringTel = getIntent().getStringExtra("stringTel");
                 String phone = getIntent().getStringExtra("phone");
-                String password = getIntent().getStringExtra("password");
+                String fullPhone = getIntent().getStringExtra("fullPhone");
 
+                // if is verified by SmsCode (from LoginActivity) store Data in firebase and go to activity
+                if(fAuth.getCurrentUser() != null){
 
-                passValuesToActivity(name,surname,phone,street,city,blockNumber,flatLetter,blockOfFlatNumber,stringTel,email,password);
+                    StoreUserData(email,name,surname,fullPhone,city,street,blockNumber,flatLetter,blockOfFlatNumber);
+
+                    Toast.makeText(SignUpActivity.this, "Witaj " + name ,Toast.LENGTH_LONG).show();
+                    Intent goNext = new Intent(this, MenuActivity.class);
+                    startActivity(goNext);
+                    finish();
+                }
+                //else go to SmsVerification
+                else {
+                    passValuesToActivity(name,surname,fullPhone,street,city,blockNumber,flatLetter,blockOfFlatNumber,phone,email);
+
+                }
+
 
             }
         });
@@ -116,33 +135,23 @@ public class SignUpActivity extends AppCompatActivity {
     ///////////////////////////////////////Methods//////////////////////////////////////////////////
 
 
-    //verification email
-    /*private void sendVerificationEmail(){
-        FirebaseUser user = fAuth.getCurrentUser();
-        user.sendEmailVerification()
-                .addOnSuccessListener(aVoid ->
-                        Toast.makeText(SignUpActivity.this, "Kod weryfikacyjny został wysłany na podany E-mail", Toast.LENGTH_SHORT).show())
-                .addOnFailureListener(e ->
-                        Toast.makeText(SignUpActivity.this, "error" + e.getMessage(), Toast.LENGTH_SHORT).show());
-    }
-    */
 
-    private void passValuesToActivity(String name,String surname,String phone,String street,String city, String block,
-                                      String flatLetter,String flat,String stringTel,String email,String password){
+    private void passValuesToActivity(String name,String surname,String fullPhone,String street,String city, String block,
+                                      String flatLetter,String flat,String phone,String email){
         //pass all fields to the next activity
         Intent goNext = new Intent(this, SmsVerificationActivity.class);
 
         goNext.putExtra("name",name);
         goNext.putExtra("surname",surname);
-        goNext.putExtra("phone",phone);
+        goNext.putExtra("fullPhone",fullPhone);
         goNext.putExtra("street",street);
         goNext.putExtra("city",city);
         goNext.putExtra("block",block);
         goNext.putExtra("flatLetter",flatLetter);
         goNext.putExtra("flat",flat);
-        goNext.putExtra("stringTel", stringTel);
+        goNext.putExtra("phone", phone);
         goNext.putExtra("email",email);
-        goNext.putExtra("password",password);
+
 
         Toast.makeText(SignUpActivity.this, "Witaj " + name ,Toast.LENGTH_SHORT).show();
 
@@ -175,5 +184,20 @@ public class SignUpActivity extends AppCompatActivity {
                 getResources().getStringArray(R.array.cities));
         myAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         city_spinner.setAdapter(myAdapter);
+    }
+
+    //Firebase store data
+    private void StoreUserData(String email,String name,String surname,
+                               String fullPhone,String city,String street,String block,String flatLetter,String flat){
+        FirebaseDatabase rootNode;
+        DatabaseReference reference;
+
+        rootNode = FirebaseDatabase.getInstance();
+        reference = rootNode.getReference("Users");
+
+        UserHelperClass addNewUser =
+                new UserHelperClass(email,name,surname,fullPhone,street,block,city,flatLetter,flat);
+
+        reference.child(fullPhone).setValue(addNewUser);
     }
 }

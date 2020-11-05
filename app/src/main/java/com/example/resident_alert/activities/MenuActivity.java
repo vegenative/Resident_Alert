@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.resident_alert.R;
 import com.example.resident_alert.SessionManager;
@@ -39,12 +40,15 @@ public class MenuActivity extends AppCompatActivity {
 
         dataInfo_tv.setText(name +"\n"+ surname +"\n"+ phone +"\n"+ email);
 
+        if(FirebaseAuth.getInstance().getCurrentUser() != null){
+            Toast.makeText(this,"Jest użytkownik",Toast.LENGTH_LONG).show();
+        }
+
         ticketButton = findViewById(R.id.ticketButton);
         ticketButton.setOnClickListener(v -> {
             Intent intent2 = new Intent(this, PlaceActivity.class);
 
             startActivity(intent2);
-
         });
 
 

@@ -78,85 +78,10 @@
                 android:textSize="@dimen/login_textSize" />
         </LinearLayout>
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
-
-            <TextView
-                android:id="@+id/password_tv"
-                android:layout_width="103dp"
-                android:layout_height="31dp"
-                android:layout_marginStart="16dp"
-                android:fontFamily="@font/staatliches_font"
-                android:gravity="center_horizontal|top"
-                android:text="@string/password"
-                android:textColor="@color/black"
-                android:textSize="@dimen/login_textSize" />
-
-            <EditText
-                android:id="@+id/password_et"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_marginStart="16dp"
-                android:layout_marginEnd="16dp"
-                android:background="@drawable/round_et"
-                android:drawableStart="@drawable/password_icon"
-                android:ems="10"
-                android:fontFamily="sans-serif"
-                android:inputType="textPassword"
-                android:padding="10dp"
-                android:textColorHint="@color/colorGray"
-                android:textSize="@dimen/login_textSize" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:id="@+id/forgotPassword_ll"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:orientation="horizontal"
-            android:textAlignment="center"
-            tools:visibility="visible">
-
-            <Switch
-                android:id="@+id/rememberMe_switch"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_marginVertical="8dp"
-                android:layout_marginStart="16dp"
-                android:layout_marginEnd="32dp"
-                android:layout_weight="1"
-                android:checked="false"
-                android:fontFamily="@font/staatliches_font"
-                android:layoutDirection="rtl"
-                android:text="@string/rememberMe"
-                android:textAlignment="center"
-                android:textSize="@dimen/login_textSize" />
-
-
-
-            <TextView
-                android:id="@+id/resetPassword_tv"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_gravity="center"
-                android:layout_weight="3"
-                android:layout_marginVertical="8dp"
-                android:layout_marginEnd="32dp"
-                android:clickable="true"
-                android:text="@string/forgotPasswordTv"
-                android:textAlignment="center"
-                android:textColor="@color/colorAccentLogin"
-                android:textSize="@dimen/login_textSize" />
-
-
-        </LinearLayout>
 
         <Button
             android:id="@+id/login_btn"
-            android:layout_width="196dp"
+            android:layout_width="200dp"
             android:layout_height="42dp"
             android:layout_gravity="center"
             android:layout_marginVertical="8dp"
@@ -178,28 +103,26 @@
             <TextView
                 android:id="@+id/noAccounttxt_tv"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 android:layout_marginVertical="8dp"
-                android:layout_marginStart="64dp"
-                android:layout_weight="2"
+                android:layout_weight="1"
                 android:text="@string/noAccount"
                 android:fontFamily="@font/staatliches_font"
                 android:textColor="@color/black"
                 android:textAlignment="center"
-                android:textSize="@dimen/login_textSize" />
+                android:textSize="22sp" />
 
             <TextView
                 android:id="@+id/noAccount_tv"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="2"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
                 android:layout_marginVertical="8dp"
-                android:layout_marginEnd="64dp"
                 android:clickable="true"
                 android:text="@string/SignUp"
                 android:textAlignment="center"
                 android:textColor="@color/colorAccentLogin"
-                android:textSize="@dimen/login_textSize" />
+                android:textSize="22sp" />
 
         </LinearLayout>
 

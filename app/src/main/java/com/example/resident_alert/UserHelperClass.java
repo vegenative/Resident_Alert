@@ -2,12 +2,11 @@ package com.example.resident_alert;
 
 public class UserHelperClass {
 
-    private String email, password, name, surname, telephone, city, street, block, flatLetter, flat, place, action;
+    private String email, name, surname, telephone, city, street, block, flatLetter, flat, place, action;
 
-    public UserHelperClass(String email, String password,String name,String surname, String telephone,
+    public UserHelperClass(String email,String name,String surname, String telephone,
                            String street, String block,String city,String flatLetter,String flat) {
         this.email = email;
-        this.password = password;
         this.name = name;
         this.surname = surname;
         this.telephone = telephone;
@@ -33,14 +32,6 @@ public class UserHelperClass {
 
     public void setEmail(String email) {
         this.email = email;
-    }
-
-    public String getPassword() {
-        return password;
-    }
-
-    public void setPassword(String password) {
-        this.password = password;
     }
 
     public String getName() {

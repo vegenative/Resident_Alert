@@ -107,7 +107,6 @@ public class SessionManager {
 
         userData.put(KEY_PHONE_rememberme, userSession.getString(KEY_PHONE_rememberme,null));
         userData.put(KEY_PASSWORD, userSession.getString(KEY_PASSWORD,null));
-
         return userData;
     }
     public boolean checkRememberMe(){
