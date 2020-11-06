@@ -2,7 +2,7 @@ package com.example.resident_alert;
 
 public class UserHelperClass {
 
-    private String email, name, surname, telephone, city, street, block, flatLetter, flat, place, action, info;
+    private String email, name, surname, telephone, city, street, block, flatLetter, flat, place, action, info, status, submissionDate;
 
     public UserHelperClass(String email,String name,String surname, String telephone,
                            String street, String block,String city,String flatLetter,String flat) {
@@ -17,10 +17,12 @@ public class UserHelperClass {
         this.flat = flat;
     }
 
-    public UserHelperClass(String place, String action, String info) {
+    public UserHelperClass(String place, String action, String info, String status, String submissionDate) {
         this.place = place;
         this.action = action;
         this.info = info;
+        this.status = status;
+        this.submissionDate = submissionDate;
     }
 
     public UserHelperClass() {
@@ -119,5 +121,21 @@ public class UserHelperClass {
 
     public void setInfo(String info) {
         this.info = info;
+    }
+
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
+    }
+
+    public String getSubmissionDate() {
+        return submissionDate;
+    }
+
+    public void setSubmissionDate(String submissionDate) {
+        this.submissionDate = submissionDate;
     }
 }

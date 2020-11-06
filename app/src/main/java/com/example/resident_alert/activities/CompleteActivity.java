@@ -25,7 +25,10 @@ import com.google.firebase.database.ValueEventListener;
 
 import com.example.resident_alert.R;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.HashMap;
+import java.util.Locale;
 
 public class CompleteActivity extends AppCompatActivity {
 
@@ -40,6 +43,8 @@ public class CompleteActivity extends AppCompatActivity {
     private EditText infoNameText;
     private Button submitTicket;
     public String infoText;
+    public String status = "Rozpoczęte";
+    public String currentDate;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -52,6 +57,7 @@ public class CompleteActivity extends AppCompatActivity {
         infoNameText = findViewById(R.id.infoNameText);
         submitTicket = findViewById(R.id.submitTicket);
 
+        currentDate = new SimpleDateFormat("dd-MM-yyyy", Locale.getDefault()).format(new Date());
 
 
         Intent intent = getIntent();
@@ -76,27 +82,26 @@ public class CompleteActivity extends AppCompatActivity {
             progressDialog.getWindow().setBackgroundDrawableResource(android.R.color.transparent);
 
             infoText = infoNameText.getText().toString();
-            StoreUserData(placeName,actionName,infoText);
+            StoreUserData(placeName,actionName,infoText, status,currentDate);
             progressDialog.dismiss();
-            Toast.makeText(this,"Zgłoszenie zostało wysłane",Toast.LENGTH_SHORT).show();
+
             startActivity(new Intent(this,MenuActivity.class));
         });
 
 
 
     }
-    private void StoreUserData(String place, String action, String info){
-
+    private void StoreUserData(String place, String action, String info, String status, String currentDate){
 
         rootNode = FirebaseDatabase.getInstance();
         reference = rootNode.getReference("Users/"+phone);
 
         UserHelperClass addNewTicket =
-                new UserHelperClass(place,action,info);
+                new UserHelperClass(place,action,info,status, currentDate);
 
 
         reference.child("tickets").push().setValue(addNewTicket);
-
+        Toast.makeText(this,"Zgłoszenie zostało wysłane",Toast.LENGTH_SHORT).show();
 
 
     }
