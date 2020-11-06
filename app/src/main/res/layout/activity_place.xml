@@ -6,35 +6,57 @@
     android:layout_height="match_parent"
     tools:context=".activities.PlaceActivity">
 
+    <TextView
+        android:id="@+id/placeText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:gravity="center"
+        android:text="Gdzie nastąpiła usterka?"
+        android:textAlignment="center"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <ScrollView
         android:id="@+id/scrollView2"
-        android:layout_width="0dp"
+        android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_marginTop="100dp"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/placeText">
 
         <TableLayout
-            android:stretchColumns="*"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="0dp"
+            android:stretchColumns="*">
 
             <TableRow
                 android:layout_width="match_parent"
-                android:layout_height="match_parent">
+                android:layout_height="match_parent"
+                android:layout_marginBottom="16dp">
 
                 <Button
                     android:id="@+id/bathroomButton"
-                    android:layout_width="200dp"
-                    android:layout_height="168dp"
+                    android:layout_width="0dp"
+                    android:layout_height="150dp"
+                    android:layout_weight="1"
+                    android:layout_column="0"
+                    android:layout_marginHorizontal="8dp"
                     android:background="@drawable/sketch_button"
                     android:text="Łazienka"
                     android:textColor="#FFF" />
 
                 <Button
                     android:id="@+id/kitchenButton"
-                    android:layout_width="131dp"
-                    android:layout_height="match_parent"
+                    android:layout_width="0dp"
+                    android:layout_height="150dp"
+                    android:layout_weight="1"
+                    android:layout_column="1"
+                    android:layout_marginHorizontal="8dp"
                     android:background="@drawable/sketch_button"
                     android:text="Kuchnia"
                     android:textColor="#FFF" />
@@ -42,20 +64,27 @@
 
             <TableRow
                 android:layout_width="match_parent"
-                android:layout_height="match_parent">
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp">
 
                 <Button
                     android:id="@+id/salonButton"
-                    android:layout_width="210dp"
-                    android:layout_height="168dp"
+                    android:layout_width="0dp"
+                    android:layout_height="150dp"
+                    android:layout_weight="1"
+                    android:layout_column="0"
+                    android:layout_marginHorizontal="8dp"
                     android:background="@drawable/sketch_button"
                     android:text="Pokój dzienny"
                     android:textColor="#FFF" />
 
                 <Button
                     android:id="@+id/corridorButton"
-                    android:layout_width="200dp"
-                    android:layout_height="168dp"
+                    android:layout_width="0dp"
+                    android:layout_height="150dp"
+                    android:layout_weight="1"
+                    android:layout_column="1"
+                    android:layout_marginHorizontal="8dp"
                     android:background="@drawable/sketch_button"
                     android:text="Korytarz"
                     android:textColor="#FFF" />
@@ -64,20 +93,27 @@
 
             <TableRow
                 android:layout_width="match_parent"
-                android:layout_height="match_parent">
+                android:layout_height="150dp"
+                android:layout_marginBottom="16dp">
 
                 <Button
                     android:id="@+id/cellarButton"
-                    android:layout_width="210dp"
-                    android:layout_height="168dp"
+                    android:layout_width="0dp"
+                    android:layout_height="150dp"
+                    android:layout_weight="1"
+                    android:layout_column="0"
+                    android:layout_marginHorizontal="8dp"
                     android:background="@drawable/sketch_button"
                     android:text="Piwnica"
                     android:textColor="#FFF" />
 
                 <Button
                     android:id="@+id/staircaseButton"
-                    android:layout_width="200dp"
-                    android:layout_height="168dp"
+                    android:layout_width="0dp"
+                    android:layout_height="150dp"
+                    android:layout_weight="1"
+                    android:layout_column="1"
+                    android:layout_marginHorizontal="8dp"
                     android:background="@drawable/sketch_button"
                     android:text="Klatka schodowa"
                     android:textColor="#FFF" />
@@ -85,37 +121,32 @@
 
             <TableRow
                 android:layout_width="match_parent"
-                android:layout_height="match_parent">
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp">
 
                 <Button
                     android:id="@+id/garageButton"
-                    android:layout_width="210dp"
-                    android:layout_height="168dp"
+                    android:layout_width="0dp"
+                    android:layout_height="150dp"
+                    android:layout_weight="1"
+                    android:layout_column="0"
+                    android:layout_marginHorizontal="8dp"
                     android:background="@drawable/sketch_button"
                     android:text="Garaż"
                     android:textColor="#FFF" />
 
                 <Button
                     android:id="@+id/gardenButton"
-                    android:layout_width="200dp"
-                    android:layout_height="168dp"
+                    android:layout_width="0dp"
+                    android:layout_height="150dp"
+                    android:layout_column="1"
+                    android:layout_weight="1"
+                    android:layout_marginHorizontal="8dp"
                     android:background="@drawable/sketch_button"
                     android:text="Ogród"
                     android:textColor="#FFF" />
             </TableRow>
         </TableLayout>
     </ScrollView>
-
-    <TextView
-        android:id="@+id/placeText"
-        android:layout_width="198dp"
-        android:layout_height="38dp"
-        android:layout_marginTop="24dp"
-        android:text="Gdzie nastąpiła usterka?"
-        android:textSize="18sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
