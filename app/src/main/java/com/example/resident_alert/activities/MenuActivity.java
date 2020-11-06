@@ -20,6 +20,8 @@ public class MenuActivity extends AppCompatActivity {
 
     private Button logout_btn;
     private Button ticketButton;
+    private Button historyButton;
+    private Button profileButton;
     private TextView dataInfo_tv;
 
     @Override
@@ -28,7 +30,8 @@ public class MenuActivity extends AppCompatActivity {
         setContentView(R.layout.activity_menu);
 
         logout_btn = (Button) findViewById(R.id.logout_btn);
-
+        historyButton = findViewById(R.id.historyButton);
+        profileButton = findViewById(R.id.profileButton);
 
 //        SessionManager sessionManager = new SessionManager(this,SessionManager.SESSION_USERSESSION);
 //        HashMap<String,String> userDetails = sessionManager.getUserDetailFromSession();
@@ -49,6 +52,20 @@ public class MenuActivity extends AppCompatActivity {
             startActivity(intent2);
         });
 
+
+
+        historyButton.setOnClickListener(v -> {
+            Intent intent3 = new Intent(this, HistoryActivity.class);
+
+            startActivity(intent3);
+        });
+
+
+        profileButton.setOnClickListener(v -> {
+            Intent intent4 = new Intent(this, ProfileActivity.class);
+
+            startActivity(intent4);
+        });
 
         logout_btn.setOnClickListener(v -> {
 
