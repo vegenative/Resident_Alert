@@ -41,17 +41,7 @@ public class UserHelperClass {
         this.submissionDate = submissionDate;
     }
 
-    public UserHelperClass(String name,String surname,String telephone,String submissionDate,String status,String action,String place,String info){
 
-        this.name = name;
-        this.surname = surname;
-        this.telephone = telephone;
-        this.place = place;
-        this.action = action;
-        this.info = info;
-        this.status = status;
-        this.submissionDate = submissionDate;
-    }
 
     public UserHelperClass() {
 

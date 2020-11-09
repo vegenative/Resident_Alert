@@ -59,15 +59,14 @@ public class WorkersAlertPanelActivity extends AppCompatActivity {
         recyclerView.setAdapter(ticketDataAdapter);
 
         //reference
-        /*
-        FirebaseDatabase.getInstance().getReference().child("Users").addChildEventListener(new ChildEventListener() {
+
+        FirebaseDatabase.getInstance().getReference().child("Tickets").addChildEventListener(new ChildEventListener() {
             @Override
             public void onChildAdded(@NonNull DataSnapshot snapshot, @Nullable String previousChildName) {
-                for (DataSnapshot snapshot1 : snapshot.getChildren()) {
-                    UserHelperClass ticket = snapshot1.getValue(UserHelperClass.class);
+
+                    UserHelperClass ticket = snapshot.getValue(UserHelperClass.class);
                     dataList.add(ticket);
 
-                }
 
                 ticketDataAdapter.notifyDataSetChanged();
             }
@@ -93,9 +92,13 @@ public class WorkersAlertPanelActivity extends AppCompatActivity {
             }
         });
 
-         */
 
 
+
+
+
+
+/*
         FirebaseDatabase.getInstance().getReference().child("Users").addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
@@ -113,7 +116,14 @@ public class WorkersAlertPanelActivity extends AppCompatActivity {
             public void onCancelled(@NonNull DatabaseError error) {
 
             }
+
         });
+
+         */
+
+
+
+
 
 
         /*FirebaseRecyclerOptions<UserHelperClass> options =
