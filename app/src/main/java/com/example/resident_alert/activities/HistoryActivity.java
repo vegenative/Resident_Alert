@@ -1,6 +1,7 @@
 package com.example.resident_alert.activities;
 
 import com.example.resident_alert.SessionManager;
+import com.example.resident_alert.UserHelperClass;
 import com.example.resident_alert.adapters.MyViewHolder;
 import com.example.resident_alert.network.model;
 
@@ -63,6 +64,16 @@ public class HistoryActivity extends AppCompatActivity {
                 holder.statusTextFB.setText(model.getStatus());
                 holder.actionTextFB.setText(model.getAction());
                 holder.placeTextFB.setText(model.getPlace());
+                String key = getRef(position).getKey();
+                holder.anulujBtn.setOnClickListener(v -> {
+
+                    ref.child(key).child("status").setValue("Anulowane");
+
+                });
+
+                holder.deleteBtn.setOnClickListener(v -> {
+                    ref.child(key).removeValue();
+                });
 
             }
 

@@ -85,6 +85,42 @@
             android:fontFamily="@font/lato"/>
 
     </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <Button
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:id="@+id/anulujBtn"
+            android:background="@drawable/login_btn"
+            android:text="Anuluj"
+            android:textColor="@color/colorWhite"
+            android:textFontWeight="300"
+            android:textSize="20sp"
+            android:layout_gravity="center"
+            android:fontFamily="@font/roboto"
+            />
+
+
+        <Button
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:id="@+id/deleteBtn"
+            android:background="@drawable/login_btn"
+            android:text="Usuń"
+            android:textColor="@color/colorWhite"
+            android:textFontWeight="300"
+            android:textSize="20sp"
+            android:layout_gravity="center"
+            android:fontFamily="@font/roboto"
+            />
+
+
+
+
+    </LinearLayout>
     <View
         android:layout_width="match_parent"
         android:layout_height="3dp"
