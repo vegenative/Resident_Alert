@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -19,7 +20,7 @@ import java.util.HashMap;
 public class MenuActivity extends AppCompatActivity {
 
     private Button logout_btn;
-    private Button ticketButton;
+    private Button ticketButton,history_button,workersHistory_btn;
     private TextView dataInfo_tv;
 
     @Override
@@ -28,25 +29,30 @@ public class MenuActivity extends AppCompatActivity {
         setContentView(R.layout.activity_menu);
 
         logout_btn = (Button) findViewById(R.id.logout_btn);
-
-
-//        SessionManager sessionManager = new SessionManager(this,SessionManager.SESSION_USERSESSION);
-//        HashMap<String,String> userDetails = sessionManager.getUserDetailFromSession();
-//
-//        String name = userDetails.get(sessionManager.KEY_NAME);
-//        String surname = userDetails.get(sessionManager.KEY_SURNAME);
-//        String phone = userDetails.get(sessionManager.KEY_PHONE);
-//        String email = userDetails.get(sessionManager.KEY_EMAIL);
-//
-//
-
-
-
+        history_button = (Button)findViewById(R.id.historyButton);
+        workersHistory_btn = (Button) findViewById(R.id.workersHistory);
         ticketButton = findViewById(R.id.ticketButton);
+
+
+
+        history_button.setOnClickListener(v -> {
+            Intent intent = new Intent(this, HistoryActivity.class);
+            startActivity(intent);
+        });
+
+
+
         ticketButton.setOnClickListener(v -> {
             Intent intent2 = new Intent(this, PlaceActivity.class);
 
             startActivity(intent2);
+        });
+
+
+        workersHistory_btn.setOnClickListener(v -> {
+            Intent intent = new Intent(this, WorkersAlertPanelActivity.class);
+
+            startActivity(intent);
         });
 
 

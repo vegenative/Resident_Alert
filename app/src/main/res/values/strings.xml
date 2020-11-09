@@ -45,6 +45,8 @@
     <string name="placeName">Miejsce usterki:</string>
     <string name="actionName">Rodzaj usterki:</string>
     <string name="infoText">Szczegóły zgłoszenia</string>
+    <string name="workersHistory">Historia Wszystkich zgłoszeń</string>
+    <string name="alertList">Lista zgłoszeń</string>
 
     <string-array name="cities_array">
         <item>Tczew</item>

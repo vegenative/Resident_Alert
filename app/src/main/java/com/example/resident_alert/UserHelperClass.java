@@ -19,7 +19,9 @@ public class UserHelperClass {
 
 
 
+
     private String phone;
+
 
     public UserHelperClass(String email,String name,String surname, String telephone,
                            String street, String block,String city,String flatLetter,String flat) {
@@ -34,7 +36,11 @@ public class UserHelperClass {
         this.flat = flat;
     }
 
-    public UserHelperClass(String place, String action, String info, String status, String submissionDate, String phone) {
+
+    //Ticket parameters
+
+    public UserHelperClass(String place, String action, String info, String status, String submissionDate) {
+
         this.place = place;
         this.action = action;
         this.info = info;
@@ -42,6 +48,8 @@ public class UserHelperClass {
         this.submissionDate = submissionDate;
         this.phone = phone;
     }
+
+
 
     public UserHelperClass() {
 
