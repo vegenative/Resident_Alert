@@ -94,13 +94,13 @@ public class CompleteActivity extends AppCompatActivity {
     private void StoreUserData(String place, String action, String info, String status, String currentDate){
 
         rootNode = FirebaseDatabase.getInstance();
-        reference = rootNode.getReference("Users/"+phone);
+        reference = rootNode.getReference("Tickets");
 
         UserHelperClass addNewTicket =
-                new UserHelperClass(place,action,info,status, currentDate);
+                new UserHelperClass(place,action,info,status, currentDate,phone);
 
 
-        reference.child("tickets").push().setValue(addNewTicket);
+        reference.push().setValue(addNewTicket);
         Toast.makeText(this,"Zgłoszenie zostało wysłane",Toast.LENGTH_SHORT).show();
 
 
