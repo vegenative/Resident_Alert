@@ -16,7 +16,7 @@
             android:id="@+id/number_ticket"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="List Of Items"
+            android:text="@string/alertList"
             android:textAlignment="center"
             android:textSize="24sp">
 
@@ -30,13 +30,6 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
-
-        <ListView
-            android:id="@+id/listView"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
-
-        </ListView>
 
     </LinearLayout>
 

@@ -50,7 +50,7 @@ public class WorkersAlertPanelActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_workers_alert_panel);
 
-        recyclerView = (RecyclerView) findViewById(R.id.ticketData_rv) ;
+        recyclerView = (RecyclerView) findViewById(R.id.ticketData_rv);
 
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         dataList = new ArrayList<>();
