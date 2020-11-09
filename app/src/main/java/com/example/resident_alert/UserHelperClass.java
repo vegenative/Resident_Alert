@@ -2,8 +2,22 @@ package com.example.resident_alert;
 
 public class UserHelperClass {
 
-    private String email, name, surname, telephone, city, street, block, flatLetter, flat, place, action, info, status, submissionDate;
+    private String email;
+    private String name;
+    private String surname;
+    private String telephone;
+    private String city;
+    private String street;
+    private String block;
+    private String flatLetter;
+    private String flat;
+    private String place;
+    private String action;
+    private String info;
+    private String status;
+    private String submissionDate;
 
+    //Login parameters
     public UserHelperClass(String email,String name,String surname, String telephone,
                            String street, String block,String city,String flatLetter,String flat) {
         this.email = email;
@@ -17,7 +31,21 @@ public class UserHelperClass {
         this.flat = flat;
     }
 
+    //Ticket parameters
+
     public UserHelperClass(String place, String action, String info, String status, String submissionDate) {
+        this.place = place;
+        this.action = action;
+        this.info = info;
+        this.status = status;
+        this.submissionDate = submissionDate;
+    }
+
+    public UserHelperClass(String name,String surname,String telephone,String submissionDate,String status,String action,String place,String info){
+
+        this.name = name;
+        this.surname = surname;
+        this.telephone = telephone;
         this.place = place;
         this.action = action;
         this.info = info;

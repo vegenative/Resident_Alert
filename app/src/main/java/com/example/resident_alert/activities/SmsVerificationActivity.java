@@ -187,6 +187,7 @@ public class SmsVerificationActivity extends AppCompatActivity {
                 new UserHelperClass(email,name,surname,fullPhone,street,block,city,flatLetter,flat);
 
 
+
         reference.child(fullPhone).setValue(addNewUser);
     }
 
