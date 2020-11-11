@@ -50,7 +50,7 @@ public class HistoryActivity extends AppCompatActivity {
 
         phone = userDetails.get(sessionManager.KEY_PHONE);
 
-        ref = FirebaseDatabase.getInstance().getReference().child("Users").child(phone).child("tickets");
+        ref = FirebaseDatabase.getInstance().getReference().child("Tickets");
 
         recyclerView = findViewById(R.id.recyclerView);
         recyclerView.setHasFixedSize(true);
@@ -58,25 +58,26 @@ public class HistoryActivity extends AppCompatActivity {
 
         options = new FirebaseRecyclerOptions.Builder<model>().setQuery(ref,model.class).build();
         adapter= new FirebaseRecyclerAdapter<model, MyViewHolder>(options) {
+
             @Override
             protected void onBindViewHolder(@NonNull MyViewHolder holder, int position, @NonNull model model) {
-                holder.submissionDateTextFB.setText(model.getSubmissionDate());
-                holder.statusTextFB.setText(model.getStatus());
-                holder.actionTextFB.setText(model.getAction());
-                holder.placeTextFB.setText(model.getPlace());
-                String key = getRef(position).getKey();
-                holder.anulujBtn.setOnClickListener(v -> {
 
-                    ref.child(key).child("status").setValue("Anulowane");
+                    holder.submissionDateTextFB.setText(model.getSubmissionDate());
+                    holder.statusTextFB.setText(model.getStatus());
+                    holder.actionTextFB.setText(model.getAction());
+                    holder.placeTextFB.setText(model.getPhone());
+                    String key = getRef(position).getKey();
+                    holder.anulujBtn.setOnClickListener(v -> {
 
-                });
+                        ref.child(key).child("status").setValue("Anulowane");
 
-                holder.deleteBtn.setOnClickListener(v -> {
-                    ref.child(key).removeValue();
-                });
+                    });
 
+                    holder.deleteBtn.setOnClickListener(v -> {
+                        ref.child(key).removeValue();
+                    });
+                    
             }
-
             @NonNull
             @Override
             public MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {

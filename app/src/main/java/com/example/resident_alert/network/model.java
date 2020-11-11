@@ -6,14 +6,19 @@ public class model {
     private String status;
     private String submissionDate;
 
+
+
+    private String phone;
+
     public model() {
     }
 
-    public model(String action, String place, String status, String submissionDate) {
+    public model(String action, String place, String status, String submissionDate, String phone) {
         this.action = action;
         this.place = place;
         this.status = status;
         this.submissionDate = submissionDate;
+        this.phone = phone;
     }
 
     public String getAction() {
@@ -46,5 +51,13 @@ public class model {
 
     public void setSubmissionDate(String submissionDate) {
         this.submissionDate = submissionDate;
+    }
+
+    public String getPhone() {
+        return phone;
+    }
+
+    public void setPhone(String phone) {
+        this.phone = phone;
     }
 }
