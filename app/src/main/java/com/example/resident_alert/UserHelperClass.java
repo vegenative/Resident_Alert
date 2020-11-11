@@ -54,6 +54,9 @@ public class UserHelperClass {
     public UserHelperClass() {
 
     }
+    public UserHelperClass(String status) {
+        this.status = status;
+    }
 
     public String getEmail() {
         return email;

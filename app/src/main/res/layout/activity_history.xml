@@ -6,9 +6,30 @@
     android:layout_height="match_parent"
     tools:context=".activities.HistoryActivity">
 
-    <ListView
-        android:layout_width="409dp"
-        android:layout_height="844dp"
-        tools:layout_editor_absoluteX="1dp"
-        tools:layout_editor_absoluteY="1dp" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/historyText"
+            android:gravity="center"
+            android:textSize="32sp"
+            android:layout_marginBottom="10dp"
+            android:fontFamily="@font/roboto"
+            />
+        
+        <androidx.recyclerview.widget.RecyclerView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/recyclerView"/>
+        
+        
+        
+        
+        
+        
+        
+    </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

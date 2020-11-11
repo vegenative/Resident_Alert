@@ -20,7 +20,11 @@ import java.util.HashMap;
 public class MenuActivity extends AppCompatActivity {
 
     private Button logout_btn;
+
     private Button ticketButton,history_button,workersHistory_btn;
+
+    private Button profileButton;
+
     private TextView dataInfo_tv;
 
     @Override
@@ -29,10 +33,14 @@ public class MenuActivity extends AppCompatActivity {
         setContentView(R.layout.activity_menu);
 
         logout_btn = (Button) findViewById(R.id.logout_btn);
+
         history_button = (Button)findViewById(R.id.historyButton);
         workersHistory_btn = (Button) findViewById(R.id.workersHistory);
         ticketButton = findViewById(R.id.ticketButton);
 
+
+
+        profileButton = findViewById(R.id.profileButton);
 
 
         history_button.setOnClickListener(v -> {
@@ -49,12 +57,22 @@ public class MenuActivity extends AppCompatActivity {
         });
 
 
+
         workersHistory_btn.setOnClickListener(v -> {
             Intent intent = new Intent(this, WorkersAlertPanelActivity.class);
 
             startActivity(intent);
         });
 
+
+
+
+
+        profileButton.setOnClickListener(v -> {
+            Intent intent4 = new Intent(this, ProfileActivity.class);
+
+            startActivity(intent4);
+        });
 
         logout_btn.setOnClickListener(v -> {
 

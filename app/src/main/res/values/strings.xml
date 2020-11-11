@@ -40,13 +40,21 @@
     <string name="checkHistory">Sprawdź historie</string>
     <string name="checkProfile">Sprawdź profil</string>
     <string name="submitTicket">Wyślij zgłoszenie</string>
-
     <string name="userPhone">Zalogowany jako:</string>
     <string name="placeName">Miejsce usterki:</string>
     <string name="actionName">Rodzaj usterki:</string>
     <string name="infoText">Szczegóły zgłoszenia</string>
+
     <string name="workersHistory">Historia Wszystkich zgłoszeń</string>
     <string name="alertList">Lista zgłoszeń</string>
+
+    <string name="historyText">Historia zgłoszeń</string>
+    <string name="date">Zgłoszono</string>
+    <string name="place">Miejsce</string>
+    <string name="action">Rodzaj</string>
+    <string name="status">Status</string>
+    <string name="profileInfo">Szczegóły profilu</string>
+
 
     <string-array name="cities_array">
         <item>Tczew</item>

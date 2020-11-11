@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal">
+    <TextView
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:id="@+id/submissionDateName"
+        android:text="@string/date"
+        android:textSize="18sp"
+        android:fontFamily="@font/roboto"/>
+    <TextView
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:id="@+id/statusName"
+        android:text="@string/status"
+        android:textSize="18sp"
+        android:layout_marginLeft="20dp"
+        android:fontFamily="@font/roboto"/>
+    <TextView
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:id="@+id/actionName"
+        android:text="@string/status"
+        android:textSize="18sp"
+        android:layout_marginLeft="20dp"
+        android:fontFamily="@font/roboto"/>
+    <TextView
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:id="@+id/placeName"
+        android:text="@string/place"
+        android:textSize="18sp"
+        android:layout_marginLeft="20dp"
+        android:fontFamily="@font/roboto"/>
+</LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:id="@+id/submissionDateTextFB"
+            android:text="123"
+            android:textSize="18sp"
+            android:fontFamily="@font/lato"/>
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:id="@+id/statusTextFB"
+            android:text="432"
+            android:textSize="18sp"
+            android:layout_marginLeft="20dp"
+            android:fontFamily="@font/lato"/>
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:id="@+id/actionTextFB"
+            android:text="432"
+            android:textSize="18sp"
+            android:layout_marginLeft="20dp"
+            android:fontFamily="@font/lato"/>
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:id="@+id/placeTextFB"
+            android:text="432"
+            android:textSize="18sp"
+            android:layout_marginLeft="20dp"
+            android:fontFamily="@font/lato"/>
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <Button
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:id="@+id/anulujBtn"
+            android:background="@drawable/login_btn"
+            android:text="Anuluj"
+            android:textColor="@color/colorWhite"
+            android:textFontWeight="300"
+            android:textSize="20sp"
+            android:layout_gravity="center"
+            android:fontFamily="@font/roboto"
+            />
+
+
+        <Button
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:id="@+id/deleteBtn"
+            android:background="@drawable/login_btn"
+            android:text="Usuń"
+            android:textColor="@color/colorWhite"
+            android:textFontWeight="300"
+            android:textSize="20sp"
+            android:layout_gravity="center"
+            android:fontFamily="@font/roboto"
+            />
+
+
+
+
+    </LinearLayout>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="3dp"
+        android:background="@android:color/darker_gray"/>
+</LinearLayout>
