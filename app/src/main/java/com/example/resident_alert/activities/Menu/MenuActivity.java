@@ -10,6 +10,7 @@ import android.widget.TextView;
 import com.example.resident_alert.R;
 import com.example.resident_alert.SessionManager;
 import com.example.resident_alert.activities.Login.LoginActivity;
+import com.example.resident_alert.activities.ProfileActivity;
 import com.google.firebase.auth.FirebaseAuth;
 
 public class MenuActivity extends AppCompatActivity {
