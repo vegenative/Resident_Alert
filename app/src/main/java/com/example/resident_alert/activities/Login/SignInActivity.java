@@ -1,4 +1,4 @@
-package com.example.resident_alert.activities;
+package com.example.resident_alert.activities.Login;
 
 import androidx.appcompat.app.AppCompatActivity;
 

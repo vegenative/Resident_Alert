@@ -47,6 +47,11 @@
 
     <string name="workersHistory">Historia Wszystkich zgłoszeń</string>
     <string name="alertList">Lista zgłoszeń</string>
+    <string name="status_ticket">Status:</string>
+    <string name="data_ticket">Data utowrzenia</string>
+    <string name="action_ticket">Rodzaj usterki</string>
+    <string name="place_ticket">Miejsce zdarzenia</string>
+    <string name="info_ticket">Dodatkowe informacje</string>
 
     <string name="historyText">Historia zgłoszeń</string>
     <string name="date">Zgłoszono</string>

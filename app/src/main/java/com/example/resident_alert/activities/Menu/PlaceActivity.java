@@ -1,4 +1,4 @@
-package com.example.resident_alert.activities;
+package com.example.resident_alert.activities.Menu;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -6,10 +6,9 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
-import android.widget.TextView;
 
 import com.example.resident_alert.R;
-import com.example.resident_alert.activities.ActionActivity;
+import com.example.resident_alert.activities.Menu.ActionActivity;
 
 public class PlaceActivity extends AppCompatActivity implements View.OnClickListener {
 

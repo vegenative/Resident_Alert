@@ -1,4 +1,4 @@
-package com.example.resident_alert.activities;
+package com.example.resident_alert.activities.Login;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -17,6 +17,7 @@ import android.widget.Toast;
 
 import com.example.resident_alert.R;
 import com.example.resident_alert.UserHelperClass;
+import com.example.resident_alert.activities.Menu.MenuActivity;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;

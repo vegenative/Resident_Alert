@@ -63,6 +63,7 @@ public class SessionManager {
         editor.commit();
 
     }
+
     public HashMap<String,String> getUserDetailFromSession(){
         HashMap<String,String> userData = new HashMap<String,String>();
 
@@ -77,6 +78,7 @@ public class SessionManager {
         userData.put(KEY_FLAT, userSession.getString(KEY_FLAT,null));
         return userData;
     }
+
     public boolean checkLogin(){
         if(userSession.getBoolean(IS_LOGIN,true)){
             return true;
@@ -122,4 +124,5 @@ public class SessionManager {
         editor.commit();
 
     }
+
 }

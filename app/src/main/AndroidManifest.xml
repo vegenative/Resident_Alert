@@ -13,21 +13,21 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
 
-        <activity android:name=".activities.WorkersAlertPanelActivity"></activity>
 
         <activity android:name=".activities.ProfileActivity"></activity>
-
-        <activity android:name=".activities.HistoryActivity" />
-        <activity android:name=".activities.LoginActivity" />
-        <activity android:name=".activities.ResetPasswordActivity" />
-        <activity android:name=".activities.SmsVerificationActivity" />
-        <activity android:name=".activities.SignInActivity" />
-        <activity android:name=".activities.MenuActivity" />
-        <activity android:name=".activities.CompleteActivity" />
-        <activity android:name=".activities.SignUpActivity" />
-        <activity android:name=".activities.ActionActivity" />
-        <activity android:name=".activities.PlaceActivity" />
-        <activity android:name=".activities.StartActivity">
+        <activity android:name=".activities.WorkersPanel.MenuWorkersActivity"></activity>
+        <activity android:name=".activities.Menu.InfoTicketActivity" />
+        <activity android:name=".activities.Menu.UserTicketHistoryActivity" />
+        <activity android:name=".activities.Menu.HistoryActivity" />
+        <activity android:name=".activities.Login.LoginActivity" />
+        <activity android:name=".activities.Login.SmsVerificationActivity" />
+        <activity android:name=".activities.Login.SignInActivity" />
+        <activity android:name=".activities.Menu.MenuActivity" />
+        <activity android:name=".activities.Menu.CompleteActivity" />
+        <activity android:name=".activities.Login.SignUpActivity" />
+        <activity android:name=".activities.Menu.ActionActivity" />
+        <activity android:name=".activities.Menu.PlaceActivity" />
+        <activity android:name=".activities.Login.StartActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

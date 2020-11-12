@@ -1,21 +1,16 @@
-package com.example.resident_alert.activities;
+package com.example.resident_alert.activities.Menu;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.example.resident_alert.R;
 import com.example.resident_alert.SessionManager;
-import com.example.resident_alert.activities.LoginActivity;
+import com.example.resident_alert.activities.Login.LoginActivity;
 import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.auth.FirebaseUser;
-
-import java.util.HashMap;
 
 public class MenuActivity extends AppCompatActivity {
 
@@ -59,7 +54,7 @@ public class MenuActivity extends AppCompatActivity {
 
 
         workersHistory_btn.setOnClickListener(v -> {
-            Intent intent = new Intent(this, WorkersAlertPanelActivity.class);
+            Intent intent = new Intent(this, UserTicketHistoryActivity.class);
 
             startActivity(intent);
         });

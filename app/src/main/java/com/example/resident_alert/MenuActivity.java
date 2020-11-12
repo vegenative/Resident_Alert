@@ -4,14 +4,11 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
-import android.widget.Toast;
 
-import com.example.resident_alert.activities.LoginActivity;
-import com.example.resident_alert.activities.PlaceActivity;
-import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
+import com.example.resident_alert.activities.Login.LoginActivity;
+import com.example.resident_alert.activities.Menu.PlaceActivity;
 import com.google.firebase.auth.FirebaseAuth;
 
 public class MenuActivity extends AppCompatActivity {

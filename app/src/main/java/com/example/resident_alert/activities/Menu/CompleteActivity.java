@@ -1,6 +1,5 @@
-package com.example.resident_alert.activities;
+package com.example.resident_alert.activities.Menu;
 
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 
@@ -14,14 +13,9 @@ import android.widget.Toast;
 
 import com.example.resident_alert.SessionManager;
 import com.example.resident_alert.UserHelperClass;
-import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.auth.FirebaseUser;
-import com.google.firebase.database.DataSnapshot;
-import com.google.firebase.database.DatabaseError;
+import com.example.resident_alert.activities.Menu.MenuActivity;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.Query;
-import com.google.firebase.database.ValueEventListener;
 
 import com.example.resident_alert.R;
 
@@ -85,7 +79,7 @@ public class CompleteActivity extends AppCompatActivity {
             StoreUserData(placeName,actionName,infoText, status,currentDate);
             progressDialog.dismiss();
 
-            startActivity(new Intent(this,MenuActivity.class));
+            startActivity(new Intent(this, MenuActivity.class));
         });
 
 

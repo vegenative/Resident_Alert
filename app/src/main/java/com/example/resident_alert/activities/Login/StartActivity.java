@@ -1,4 +1,4 @@
-package com.example.resident_alert.activities;
+package com.example.resident_alert.activities.Login;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.viewpager.widget.ViewPager;
@@ -12,6 +12,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.example.resident_alert.R;
+import com.example.resident_alert.activities.Menu.MenuActivity;
 import com.example.resident_alert.adapters.SliderAdapter;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;

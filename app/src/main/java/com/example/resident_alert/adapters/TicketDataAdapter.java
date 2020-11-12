@@ -1,9 +1,12 @@
 package com.example.resident_alert.adapters;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -11,8 +14,8 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.resident_alert.R;
 import com.example.resident_alert.UserHelperClass;
-import com.firebase.ui.database.FirebaseRecyclerAdapter;
-import com.firebase.ui.database.FirebaseRecyclerOptions;
+import com.example.resident_alert.activities.Menu.InfoTicketActivity;
+import com.example.resident_alert.activities.Menu.UserTicketHistoryActivity;
 
 import java.util.List;
 
@@ -20,10 +23,12 @@ public class TicketDataAdapter extends RecyclerView.Adapter<TicketDataAdapter.my
 {
     private Context context;
     private List<UserHelperClass> dataList;
+    private OnTicketClick onTicketClick;
 
-    public TicketDataAdapter(Context context, List<UserHelperClass> dataList){
+    public TicketDataAdapter(Context context, List<UserHelperClass> dataList, OnTicketClick onTicketClick){
         this.context = context;
         this.dataList = dataList;
+        this.onTicketClick = onTicketClick;
     }
 
 
@@ -32,23 +37,22 @@ public class TicketDataAdapter extends RecyclerView.Adapter<TicketDataAdapter.my
     public myViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
 
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.single_ticket,parent,false);
-        return new myViewHolder(view);
+        return new myViewHolder(view, onTicketClick);
 
     }
 
+    @SuppressLint("ResourceAsColor")
     @Override
     public void onBindViewHolder(@NonNull myViewHolder holder, int position) {
 
         UserHelperClass ticket = dataList.get(position);
 
-        holder.name.setText(ticket.getName());
-        holder.surname.setText(ticket.getSurname());
-        holder.phone.setText(ticket.getTelephone());
+        holder.phone.setText(ticket.getPhone());
         holder.day.setText(ticket.getSubmissionDate());
         holder.status.setText(ticket.getStatus());
         holder.action.setText(ticket.getAction());
         holder.place.setText(ticket.getPlace());
-        holder.info.setText(ticket.getInfo());
+
 
     }
 
@@ -58,24 +62,39 @@ public class TicketDataAdapter extends RecyclerView.Adapter<TicketDataAdapter.my
         return dataList.size();
     }
 
-    class myViewHolder extends RecyclerView.ViewHolder
+    class myViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener
     {
-        TextView name,surname,phone, day,status,action,place,info;
-        public myViewHolder(@NonNull View itemView)
+        TextView phone, day,status,action,place;
+        LinearLayout single_ticket;
+        OnTicketClick onTicketClick;
+
+        public myViewHolder(@NonNull View itemView, OnTicketClick onTicketClick)
         {
             super(itemView);
 
-            name = (TextView) itemView.findViewById(R.id.name_ticket);
-            surname = (TextView) itemView.findViewById(R.id.surname_ticket);
+            this.onTicketClick = onTicketClick;
+
+            single_ticket =  (LinearLayout) itemView.findViewById(R.id.single_ticket_ll);
             phone = (TextView) itemView.findViewById(R.id.phone_ticket);
             day = (TextView) itemView.findViewById(R.id.data_Ticket);
-            status = (TextView) itemView.findViewById(R.id.status_ticket);
+            status = (TextView) itemView.findViewById(R.id.data_ticket);
             action = (TextView) itemView.findViewById(R.id.action_ticket);
             place = (TextView) itemView.findViewById(R.id.place_ticket);
-            info = (TextView) itemView.findViewById(R.id.info_Ticket);
 
 
+
+
+            single_ticket.setOnClickListener(this);
 
         }
+
+        @Override
+        public void onClick(View v) {
+            onTicketClick.onTicketClick(getAdapterPosition());
+
+        }
+    }
+    public interface OnTicketClick{
+        void onTicketClick(int position);
     }
 }

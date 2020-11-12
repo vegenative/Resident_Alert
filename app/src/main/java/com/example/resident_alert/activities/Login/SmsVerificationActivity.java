@@ -1,10 +1,9 @@
-package com.example.resident_alert.activities;
+package com.example.resident_alert.activities.Login;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.ProgressDialog;
-import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -15,11 +14,12 @@ import com.chaos.view.PinView;
 import com.example.resident_alert.R;
 import com.example.resident_alert.SessionManager;
 import com.example.resident_alert.UserHelperClass;
+import com.example.resident_alert.activities.Menu.MenuActivity;
+import com.example.resident_alert.activities.WorkersPanel.MenuWorkersActivity;
 import com.google.android.gms.tasks.TaskExecutors;
 import com.google.firebase.FirebaseException;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.PhoneAuthCredential;
-import com.google.firebase.auth.PhoneAuthOptions;
 import com.google.firebase.auth.PhoneAuthProvider;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -27,6 +27,7 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
+import com.squareup.okhttp.internal.DiskLruCache;
 
 import java.util.concurrent.TimeUnit;
 
@@ -206,6 +207,7 @@ public class SmsVerificationActivity extends AppCompatActivity {
         //check if User exists in Realtimedatabse
         Query checkUserTelephone = FirebaseDatabase.getInstance().getReference("Users").orderByChild("telephone").equalTo(fullPhone);
 
+
         checkUserTelephone.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
@@ -238,8 +240,52 @@ public class SmsVerificationActivity extends AppCompatActivity {
 
                 }
 
-                //User needs to SignUp
+                //check if is a worker, if not user needs to signUp
                 else {
+                        isWorker();
+                }
+                finish();
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+                Toast.makeText(SmsVerificationActivity.this, error.getMessage(),Toast.LENGTH_SHORT).show();
+            }
+        });
+
+    }
+
+    // check if its a worker
+    private void isWorker(){
+        Query checkWorker = FirebaseDatabase.getInstance().getReference("Workers").orderByChild("telephone").equalTo(fullPhone);
+        checkWorker.addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                if(snapshot.exists()){
+
+                    Intent intent = new Intent(getApplicationContext(), MenuWorkersActivity.class);
+
+                    //get data from database
+                    String name_user = snapshot.child(fullPhone).child("name").getValue(String.class);
+                    String surname_user = snapshot.child(fullPhone).child("surname").getValue(String.class);
+                    String email_user = snapshot.child(fullPhone).child("email").getValue(String.class);
+                    String phone_user = snapshot.child(fullPhone).child("telephone").getValue(String.class);
+                    String city_user = snapshot.child(fullPhone).child("city").getValue(String.class);
+                    String street_user = snapshot.child(fullPhone).child("street").getValue(String.class);
+                    String block_user = snapshot.child(fullPhone).child("block").getValue(String.class);
+                    String flatLatter_user = snapshot.child(fullPhone).child("flatLetter").getValue(String.class);
+                    String flat_User = snapshot.child(fullPhone).child("flat").getValue(String.class);
+
+                    //Create a user Session with data from database
+                    SessionManager sessionManager = new SessionManager(SmsVerificationActivity.this, SessionManager.SESSION_USERSESSION);
+                    sessionManager.createLoginSession(name_user,surname_user,email_user,phone_user
+                            ,city_user,street_user,block_user,flatLatter_user,flat_User);
+
+                    startActivity(intent);
+                }
+                // User isn't a worker and need to signUp
+                else{
 
                     Toast.makeText(SmsVerificationActivity.this,"Nie ma takiego konta o podanym numerze telefonu.\n Zarejestruj się",Toast.LENGTH_LONG).show();
 
@@ -249,12 +295,10 @@ public class SmsVerificationActivity extends AppCompatActivity {
                     intent.putExtra("isLogin",isLogin);
                     startActivity(intent);
                 }
-                finish();
             }
 
             @Override
             public void onCancelled(@NonNull DatabaseError error) {
-
                 Toast.makeText(SmsVerificationActivity.this, error.getMessage(),Toast.LENGTH_SHORT).show();
             }
         });

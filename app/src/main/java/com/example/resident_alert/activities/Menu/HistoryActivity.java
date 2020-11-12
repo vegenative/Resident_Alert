@@ -1,4 +1,4 @@
-package com.example.resident_alert.activities;
+package com.example.resident_alert.activities.Menu;
 
 import com.example.resident_alert.SessionManager;
 import com.example.resident_alert.UserHelperClass;
