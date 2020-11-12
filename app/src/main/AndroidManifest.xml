@@ -12,11 +12,9 @@
         android:roundIcon="@drawable/icon"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-
-        <activity android:name=".activities.WorkersAlertPanelActivity"></activity>
-
-        <activity android:name=".activities.ProfileActivity"></activity>
-
+        <activity android:name=".activities.TargetActivity"></activity>
+        <activity android:name=".activities.WorkersAlertPanelActivity" />
+        <activity android:name=".activities.ProfileActivity" />
         <activity android:name=".activities.HistoryActivity" />
         <activity android:name=".activities.LoginActivity" />
         <activity android:name=".activities.ResetPasswordActivity" />

@@ -39,7 +39,7 @@ public class UserHelperClass {
 
     //Ticket parameters
 
-    public UserHelperClass(String place, String action, String info, String status, String submissionDate) {
+    public UserHelperClass(String place, String action, String info, String status, String submissionDate, String phone) {
 
         this.place = place;
         this.action = action;
