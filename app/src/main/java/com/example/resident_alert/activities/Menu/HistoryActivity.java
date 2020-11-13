@@ -2,6 +2,7 @@ package com.example.resident_alert.activities.Menu;
 
 import com.example.resident_alert.SessionManager;
 import com.example.resident_alert.UserHelperClass;
+import com.example.resident_alert.activities.TargetActivity;
 import com.example.resident_alert.adapters.MyViewHolder;
 import com.example.resident_alert.network.model;
 
@@ -72,7 +73,7 @@ public class HistoryActivity extends AppCompatActivity {
                     String phoneIntent = model.getPhone();
                     holder.infoBtn.setOnClickListener(v -> {
 
-                        Intent intent = new Intent(getApplicationContext(),TargetActivity.class);
+                        Intent intent = new Intent(getApplicationContext(), TargetActivity.class);
                         intent.putExtra("key", key);
                         intent.putExtra("phone", phoneIntent);
                         startActivity(intent);
