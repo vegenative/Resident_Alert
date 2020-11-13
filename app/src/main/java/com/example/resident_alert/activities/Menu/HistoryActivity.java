@@ -11,6 +11,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.app.ProgressDialog;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -62,20 +63,22 @@ public class HistoryActivity extends AppCompatActivity {
             @Override
             protected void onBindViewHolder(@NonNull MyViewHolder holder, int position, @NonNull model model) {
 
+
                     holder.submissionDateTextFB.setText(model.getSubmissionDate());
                     holder.statusTextFB.setText(model.getStatus());
                     holder.actionTextFB.setText(model.getAction());
-                    holder.placeTextFB.setText(model.getPhone());
+                    holder.placeTextFB.setText(model.getPlace());
                     String key = getRef(position).getKey();
-                    holder.anulujBtn.setOnClickListener(v -> {
+                    String phoneIntent = model.getPhone();
+                    holder.infoBtn.setOnClickListener(v -> {
 
-                        ref.child(key).child("status").setValue("Anulowane");
+                        Intent intent = new Intent(getApplicationContext(),TargetActivity.class);
+                        intent.putExtra("key", key);
+                        intent.putExtra("phone", phoneIntent);
+                        startActivity(intent);
 
                     });
 
-                    holder.deleteBtn.setOnClickListener(v -> {
-                        ref.child(key).removeValue();
-                    });
                     
             }
             @NonNull

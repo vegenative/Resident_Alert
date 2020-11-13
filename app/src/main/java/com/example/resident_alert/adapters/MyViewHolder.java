@@ -14,7 +14,7 @@ import androidx.recyclerview.widget.RecyclerView;
 public class MyViewHolder extends RecyclerView.ViewHolder {
 
    public TextView submissionDateTextFB, statusTextFB, actionTextFB, placeTextFB;
-   public Button anulujBtn, deleteBtn;
+   public Button infoBtn;
 
     public MyViewHolder(@NonNull View itemView) {
         super(itemView);
@@ -23,8 +23,8 @@ public class MyViewHolder extends RecyclerView.ViewHolder {
         statusTextFB = itemView.findViewById(R.id.statusTextFB);
         actionTextFB = itemView.findViewById(R.id.actionTextFB);
         placeTextFB = itemView.findViewById(R.id.placeTextFB);
-        anulujBtn = itemView.findViewById(R.id.anulujBtn);
-        deleteBtn = itemView.findViewById(R.id.deleteBtn);
+        infoBtn = itemView.findViewById(R.id.infoBtn);
+
 
     }
 }

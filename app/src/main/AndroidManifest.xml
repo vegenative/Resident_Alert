@@ -27,7 +27,9 @@
         <activity android:name=".activities.Login.SignUpActivity" />
         <activity android:name=".activities.Menu.ActionActivity" />
         <activity android:name=".activities.Menu.PlaceActivity" />
+        <activity android:name=".activities.TargetActivity"></activity>
         <activity android:name=".activities.Login.StartActivity">
+
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

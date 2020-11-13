@@ -30,8 +30,8 @@
         android:layout_height="wrap_content"
         android:layout_weight="1"
         android:id="@+id/actionName"
-        android:text="@string/status"
-        android:textSize="18sp"
+        android:text="@string/actionName"
+        android:textSize="13sp"
         android:layout_marginLeft="20dp"
         android:fontFamily="@font/roboto"/>
     <TextView
@@ -62,7 +62,7 @@
             android:layout_weight="1"
             android:id="@+id/statusTextFB"
             android:text="432"
-            android:textSize="18sp"
+            android:textSize="15sp"
             android:layout_marginLeft="20dp"
             android:fontFamily="@font/lato"/>
         <TextView
@@ -92,9 +92,9 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:id="@+id/anulujBtn"
+            android:id="@+id/infoBtn"
             android:background="@drawable/login_btn"
-            android:text="Anuluj"
+            android:text="Szczegóły"
             android:textColor="@color/colorWhite"
             android:textFontWeight="300"
             android:textSize="20sp"
@@ -103,19 +103,7 @@
             />
 
 
-        <Button
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:id="@+id/deleteBtn"
-            android:background="@drawable/login_btn"
-            android:text="Usuń"
-            android:textColor="@color/colorWhite"
-            android:textFontWeight="300"
-            android:textSize="20sp"
-            android:layout_gravity="center"
-            android:fontFamily="@font/roboto"
-            />
+
 
 
 
